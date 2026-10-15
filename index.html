@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="MOBELIX 4륜 전기자전거 렌탈 가맹점 모집. 넘어지지 않는 네 바퀴로 유원지·관광지·산책로 렌탈 사업을 시작하세요.">
+<meta property="og:title" content="MOBELIX 가맹점 모집">
+<meta property="og:description" content="4륜 전기자전거 렌탈 가맹점 모집">
+<meta property="og:image" content="img/white-side.webp">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>MOBELIX 가맹점 모집</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:ital,wght@1,600;1,700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: 소개서의 딥그린·골드·크림 체계를 따르는 원페이지. 히어로는 딥그린 띠 위 제품 컷아웃, 이후 섹션은 좌측 제목 열 + 우측 본문 열 */
+:root{
+  --bg:#F4F0E8;
+  --surface:#FFFFFF;
+  --ink:#16302A;
+  --muted:#56665F;
+  --line:#DDD6C8;
+  --green:#1B3A2F;
+  --green-2:#2D5E4E;
+  --gold:#B8924A;
+  --gold-soft:#E9DCC0;
+  --on-green:#F4F0E8;
+  --on-green-muted:#B9C8BF;
+  --ph-bg:#FFF1B8;
+  --ph-ink:#6B5300;
+  --band:#ECE6DA;
+  --logo-filter:none;
+  --f-display:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-num:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1D18;--surface:#16271F;--ink:#ECE7DC;--muted:#A6B5AC;--line:#2B3F36;
+    --green:#132A22;--green-2:#1E4237;--gold:#D4B06A;--gold-soft:#3A3322;
+    --on-green:#F4F0E8;--on-green-muted:#A9BBB1;--ph-bg:#4A3C05;--ph-ink:#FFE07A;--band:#13241D;
+    --logo-filter:invert(1);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1D18;--surface:#16271F;--ink:#ECE7DC;--muted:#A6B5AC;--line:#2B3F36;
+  --green:#132A22;--green-2:#1E4237;--gold:#D4B06A;--gold-soft:#3A3322;
+  --on-green:#F4F0E8;--on-green-muted:#A9BBB1;--ph-bg:#4A3C05;--ph-ink:#FFE07A;--band:#13241D;
+  --logo-filter:invert(1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.3}
+h2{font-family:var(--f-display);font-weight:900;font-size:clamp(28px,3.6vw,38px);letter-spacing:-.02em}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.ph{background:var(--ph-bg);color:var(--ph-ink);border-radius:3px;padding:0 .3em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.draft-bar{background:var(--ph-bg);color:var(--ph-ink);font-size:13px}
+.draft-bar .wrap{padding-block:8px}
+
+/* 헤더 */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo img{height:22px;width:auto;filter:var(--logo-filter)}
+nav.links{display:flex;gap:22px;font-size:14px}
+nav.links a{text-decoration:none;color:var(--muted)}
+nav.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:#1B1408;font-weight:700;border:0;border-radius:4px;padding:12px 22px;font-size:15px;text-decoration:none;cursor:pointer;font-family:inherit}
+.btn:hover{filter:brightness(1.07)}
+.btn.line{background:transparent;color:var(--on-green);border:1px solid color-mix(in srgb,var(--on-green) 55%,transparent)}
+@media (max-width:860px){nav.links{display:none}}
+
+/* 히어로 */
+.hero{background:var(--green);color:var(--on-green);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:32px;align-items:center;padding-block:64px 40px}
+.hero h1{font-family:var(--f-display);font-weight:900;font-size:clamp(36px,5.6vw,64px);line-height:1.15;letter-spacing:-.03em;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{margin-top:20px;font-size:17px;color:var(--on-green-muted);max-width:32em}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-img{position:relative;min-width:0}
+.hero-img img{width:100%;filter:drop-shadow(0 24px 30px rgba(0,0,0,.35))}
+.hero-img .model{position:absolute;left:0;top:0;font-size:13px;letter-spacing:.3em;color:var(--gold);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid color-mix(in srgb,var(--on-green) 18%,transparent)}
+.stats div{padding:22px 12px 26px 0}
+.stats b{display:block;font-family:var(--f-num);font-style:italic;font-weight:700;font-size:clamp(30px,3.6vw,42px);line-height:1.1;color:var(--gold);font-variant-numeric:lining-nums}
+.stats b small{font-family:var(--f-body);font-style:normal;font-size:14px;font-weight:500;color:var(--on-green-muted);margin-left:4px}
+.stats span{font-size:13px;color:var(--on-green-muted)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:40px 24px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:480px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* 섹션 공통 */
+section.band{padding-block:80px;border-top:1px solid var(--line)}
+section.band.alt{background:var(--band)}
+.sec{display:grid;grid-template-columns:270px 1fr;gap:48px}
+.sec > *{min-width:0}
+.sec-head h2{margin-top:10px}
+.sec-head p{margin-top:14px;color:var(--muted)}
+@media (max-width:920px){.sec{grid-template-columns:1fr;gap:28px}section.band{padding-block:56px}}
+
+/* 브랜드 */
+.values{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--green)}
+.values article{padding:22px 20px 22px 0}
+.values article + article{padding-left:20px;border-left:1px solid var(--line)}
+.values .en{font-size:11px;letter-spacing:.28em;color:var(--gold);font-weight:700}
+.values h3{margin-top:6px}
+.values p{margin-top:8px;color:var(--muted);font-size:14.5px}
+.brand-note{margin-top:28px;font-size:15px;color:var(--muted)}
+@media (max-width:760px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}.values article:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:440px){.values{grid-template-columns:1fr}.values article + article{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* 제품 */
+.viewer{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
+.viewer-main{aspect-ratio:3/2;max-width:100%;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 85%,color-mix(in srgb,var(--gold) 14%,transparent),transparent 60%)}
+.viewer-main{overflow:hidden}.viewer-main img{width:100%;height:100%;object-fit:contain}
+.viewer-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:14px;align-items:center}
+.thumbs{display:flex;flex-wrap:wrap;gap:8px}
+.thumbs button{width:68px;height:48px;padding:4px;border:1px solid var(--line);background:var(--bg);border-radius:4px;cursor:pointer}
+.thumbs button[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.thumbs img{width:100%;height:100%;object-fit:contain}
+.colors{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+.colors button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:5px 12px 5px 6px;font:inherit;font-size:13px;cursor:pointer}
+.colors button[aria-pressed="true"]{border-color:var(--ink)}
+.colors i{width:16px;height:16px;border-radius:50%;display:inline-block;border:1px solid var(--line)}
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;margin-top:36px}
+.feat article{padding:18px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:14px}
+.feat .n{font-family:var(--f-num);font-style:italic;font-weight:700;font-size:26px;color:var(--gold);line-height:1}
+.feat p{color:var(--muted);font-size:14.5px;margin-top:4px}
+@media (max-width:640px){.feat{grid-template-columns:1fr}}
+
+.details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
+.details figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.details img{aspect-ratio:3/2;width:100%;object-fit:cover}
+.details figcaption{padding:12px 14px;font-size:14px}
+.details figcaption b{display:block;font-size:15px}
+.details figcaption span{color:var(--muted);font-size:13.5px}
+@media (max-width:760px){.details{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.spec-wrap{overflow-x:auto;margin-top:40px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+.spec{min-width:560px}
+.spec th,.spec td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.spec th{width:16%;color:var(--muted);font-weight:500;background:color-mix(in srgb,var(--gold-soft) 35%,transparent)}
+.spec td{width:34%;font-variant-numeric:tabular-nums}
+.spec caption{text-align:left;font-weight:700;padding-bottom:10px;font-size:16px}
+.src{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+/* 장점 */
+.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--green)}
+.why article{padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
+.why article:nth-child(odd){border-right:1px solid var(--line)}
+.why article:nth-child(even){padding-left:24px}
+.why .k{font-size:11px;letter-spacing:.28em;color:var(--gold);font-weight:700}
+.why h3{margin-top:4px}
+.why p{margin-top:8px;color:var(--muted);font-size:15px}
+@media (max-width:680px){.why{grid-template-columns:1fr}.why article:nth-child(odd){border-right:0}.why article:nth-child(even){padding-left:0}}
+
+/* 수익 */
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr}
+.calc-in{padding:24px;display:grid;gap:18px;border-right:1px solid var(--line)}
+.calc-out{padding:24px;display:flex;flex-direction:column;gap:12px;background:var(--green);color:var(--on-green)}
+.field label{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.field label output{font-family:var(--f-mono);color:var(--ink);font-variant-numeric:tabular-nums}
+.field input[type=range]{width:100%;accent-color:var(--gold)}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding-bottom:8px;border-bottom:1px dashed color-mix(in srgb,var(--on-green) 22%,transparent);color:var(--on-green-muted)}
+.row span:last-child{font-family:var(--f-mono);color:var(--on-green);font-variant-numeric:tabular-nums}
+.total{margin-top:auto;padding-top:8px}
+.total small{color:var(--on-green-muted);font-size:13px}
+.total b{display:block;font-family:var(--f-num);font-style:italic;font-size:clamp(30px,4vw,40px);color:var(--gold);line-height:1.2;font-variant-numeric:lining-nums tabular-nums}
+.calc-note{padding:12px 24px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+.rev-list{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.rev-list li{font-size:15px}
+.rev-list b{display:block;color:var(--ink)}
+.rev-list span{color:var(--muted);font-size:14px}
+@media (max-width:680px){.calc-grid{grid-template-columns:1fr}.calc-in{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* 절차 */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));counter-reset:s}
+.steps li{counter-increment:s;padding:20px 20px 24px 0;border-top:2px solid var(--green)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--f-num);font-style:italic;font-weight:700;font-size:30px;color:var(--gold);display:block;line-height:1;margin-bottom:10px}
+.steps p{color:var(--muted);font-size:14.5px;margin-top:6px}
+.steps .dur{font-family:var(--f-mono);font-size:12px;margin-top:10px;display:inline-block}
+@media (max-width:820px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.cost{margin-top:36px;overflow-x:auto}
+.cost table{min-width:460px}
+.cost th,.cost td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}
+.cost th{font-size:13px;color:var(--muted);font-weight:500}
+.cost td.num{font-family:var(--f-mono);white-space:nowrap}
+.cost tfoot td{font-weight:700;border-bottom:2px solid var(--green)}
+.cost caption{text-align:left;font-weight:700;padding-bottom:8px}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:2px solid var(--green)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 36px 18px 0;font-weight:700;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;color:var(--gold)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 20px;color:var(--muted);max-width:64ch}
+
+/* 상담 */
+.form-band{background:var(--green);color:var(--on-green)}
+.form-band .sec-head p{color:var(--on-green-muted)}
+form.inq{background:var(--surface);color:var(--ink);border-radius:6px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form.inq .full{grid-column:1/-1}
+form.inq label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px}
+form.inq input,form.inq select,form.inq textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:11px 12px}
+form.inq textarea{min-height:110px;resize:vertical}
+form.inq .check{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--muted)}
+form.inq .check input{width:auto;margin-top:6px}
+.err{color:#B4410F;font-size:13px}
+.sent{grid-column:1/-1;background:color-mix(in srgb,var(--gold) 14%,var(--surface));border-radius:4px;padding:16px;font-size:15px}
+.contact-lines{margin-top:30px;display:grid;gap:14px;font-size:16px}
+.contact-lines b{display:block;font-size:11px;letter-spacing:.28em;color:var(--gold);font-weight:700}
+.copy{margin-left:8px;font:inherit;font-size:12px;background:transparent;color:var(--on-green-muted);border:1px solid color-mix(in srgb,var(--on-green) 30%,transparent);border-radius:3px;padding:1px 8px;cursor:pointer}
+@media (max-width:620px){form.inq{grid-template-columns:1fr;padding:20px}}
+
+footer{padding-block:36px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (prefers-reduced-motion:no-preference){.viewer-main img{transition:opacity .25s}}
+</style>
+</head>
+<body>
+
+<div class="draft-bar"><div class="wrap"><b>초안</b> · <span class="ph">노란색 표시</span>는 아직 정해지지 않은 자리입니다. 제품 사양과 연락처는 MOBELIX 회사 소개서(2026.09) 기준입니다.</div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="MOBELIX 처음으로"><img src="img/logo.webp" alt="MOBELIX" width="127" height="21"></a>
+    <nav class="links" aria-label="주요 메뉴">
+      <a href="#brand">브랜드</a>
+      <a href="#product">제품</a>
+      <a href="#why">가맹 장점</a>
+      <a href="#revenue">수익 구조</a>
+      <a href="#process">창업 절차</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="#apply">가맹 상담</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Franchise · 가맹점 모집</div>
+      <h1>넘어지지 않는 네 바퀴,<br><em>관광지 렌탈</em>의<br>새로운 기준</h1>
+      <p class="lede">MOBELIX 4륜 전기자전거는 정차해도 발을 디딜 필요가 없어 어린이부터 어르신까지 누구나 탑니다. 유원지, 관광지, 산책로에서 시간 단위로 대여하는 렌탈 사업을 함께할 가맹점을 모집합니다.</p>
+      <div class="ctas">
+        <a class="btn" href="#apply">창업 상담 신청</a>
+        <a class="btn line" href="#revenue">예상 수익 계산하기</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <span class="model">NOVA 4</span>
+      <img src="img/white-side.webp" alt="MOBELIX 4륜 전기자전거 화이트 측면" width="1400" height="1029">
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div><b>70<small>km</small></b><span>1회 충전 주행거리</span></div>
+      <div><b>24<small>km/h</small></b><span>최고 속도</span></div>
+      <div><b>350<small>W</small></b><span>후륜 차동 모터</span></div>
+      <div><b>48V 20<small>Ah</small></b><span>삼성SDI 셀 배터리</span></div>
+      <div><b>100~200<small>원</small></b><span>배터리 1회 완충 전기료</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="brand">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">About MOBELIX</div>
+      <h2>모두에게 편리한<br>모빌리티</h2>
+      <p>MOBELIX는 2024년에 시작한 친환경 전기 모빌리티 브랜드입니다. 4륜 전기자전거를 직접 설계해 노약자와 여성도 안전하게 탈 수 있는 이동수단을 만듭니다.</p>
+    </div>
+    <div>
+      <div class="values">
+        <article><div class="en">PHILOSOPHY</div><h3>안전과 건강</h3><p>안전하고 건강한 생활을 중시하며, 모두에게 유익한 친환경 생활을 추구합니다.</p></article>
+        <article><div class="en">VALUE</div><h3>누구나 쉽게</h3><p>노약자와 여성도 안전하고 편리하게 쓸 수 있는 다용도 4륜 전기자전거를 만듭니다.</p></article>
+        <article><div class="en">PURPOSE</div><h3>친환경 이동</h3><p>탄소 배출이 거의 없는 이동수단으로 건강과 생활의 편리함을 함께 더합니다.</p></article>
+        <article><div class="en">MISSION</div><h3>기술과 책임</h3><p>기술 혁신과 사회적 책임을 동시에 실현하는 회사로 자리매김합니다.</p></article>
+      </div>
+      <p class="brand-note"><span class="ph">회사 연혁, 특허, KC 등 인증 내역</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="product">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Product</div>
+      <h2>전복되지 않는<br>4륜 전기자전거</h2>
+      <p>2륜과 3륜 자전거로는 구현할 수 없는 구조입니다. 회전할 때 안쪽 바퀴가 바깥쪽보다 느리게 돌도록 후륜에 차동기어를 넣어, 렌탈 고객이 처음 타도 안정적으로 방향을 바꿉니다.</p>
+    </div>
+    <div>
+      <div class="viewer">
+        <div class="viewer-main"><img id="v-img" src="img/white-front.webp" alt="화이트 모델 전면 사선" width="1400" height="1303"></div>
+        <div class="viewer-bar">
+          <div class="thumbs" id="v-thumbs" role="group" aria-label="보는 각도"></div>
+          <div class="colors" role="group" aria-label="색상">
+            <button type="button" id="c-white" aria-pressed="true"><i style="background:#F2F2F0"></i>화이트</button>
+            <button type="button" id="c-navy" aria-pressed="false"><i style="background:#1E2741"></i>네이비</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <article><span class="n">01</span><div><h3>회전 차동기어</h3><p>후륜 차동기어가 좌우 바퀴 회전차를 보정해 커브에서도 기울지 않습니다.</p></div></article>
+        <article><span class="n">02</span><div><h3>10cm 스윙암 서스펜션</h3><p>약 10cm 스윙암 플로팅 구조와 듀얼 쇼크로 잔디밭, 비포장도로의 요철을 흡수합니다.</p></div></article>
+        <article><span class="n">03</span><div><h3>PAS 전기모터 보조</h3><p>페달을 밟으면 모터가 힘을 보태 작은 힘으로도 15° 경사를 오릅니다.</p></div></article>
+        <article><span class="n">04</span><div><h3>교체형 배터리</h3><p>안장 아래 레버를 젖혀 배터리를 바로 바꿉니다. 충전된 예비 배터리로 대여를 쉬지 않고 돌릴 수 있습니다.</p></div></article>
+        <article><span class="n">05</span><div><h3>후진 기어와 방향지시등</h3><p>정지 후 후진이 가능하고, 전후면 방향지시등과 전조등, 후미등을 갖췄습니다.</p></div></article>
+        <article><span class="n">06</span><div><h3>대형 바구니, 안전 주차</h3><p>뒤쪽 바구니에 짐이나 소형 반려견을 태우고, 받침대 없이도 그대로 세워 둡니다.</p></div></article>
+      </div>
+
+      <div class="details">
+        <figure><img src="img/d-display.webp" alt="LCD 계기판" loading="lazy" width="1200" height="800"><figcaption><b>LCD 계기판</b><span>속도, 단수, 배터리 잔량 표시</span></figcaption></figure>
+        <figure><img src="img/d-suspension.webp" alt="전조등과 듀얼 서스펜션" loading="lazy" width="1200" height="800"><figcaption><b>전조등과 듀얼 쇼크</b><span>야간 주행과 노면 충격 흡수</span></figcaption></figure>
+        <figure><img src="img/d-axle.webp" alt="전륜 구조와 디스크 브레이크" loading="lazy" width="1200" height="800"><figcaption><b>전·후 디스크 브레이크</b><span>네 바퀴 모두 안정적으로 제동</span></figcaption></figure>
+        <figure><img src="img/d-battery.webp" alt="48V 20Ah 배터리" loading="lazy" width="1200" height="800"><figcaption><b>48V 20Ah 배터리</b><span>삼성SDI 셀, 잠금 키로 분리</span></figcaption></figure>
+        <figure><img src="img/d-saddle.webp" alt="인체공학 안장" loading="lazy" width="1200" height="800"><figcaption><b>와이드 안장</b><span>각도 조절, 장거리에도 편안한 착석감</span></figcaption></figure>
+        <figure><img src="img/d-mirror.webp" alt="후시경과 그립" loading="lazy" width="1200" height="800"><figcaption><b>후시경과 그립</b><span>후방 시야 확보, 인체공학 핸들바</span></figcaption></figure>
+      </div>
+
+      <div class="spec-wrap">
+        <table class="spec">
+          <caption>제원 및 사양</caption>
+          <tbody>
+            <tr><th>주행방식</th><td>PAS 페달 보조</td><th>모터</th><td>48V 350W 후륜 차동 모터</td></tr>
+            <tr><th>주행거리</th><td>70km (파워 어시스트, 1인 기준)</td><th>배터리</th><td>48V 20Ah 리튬 (삼성SDI 셀)</td></tr>
+            <tr><th>최고속도</th><td>24km/h</td><th>충전</th><td>전용 충전기 54.6V 2A, 6~8시간</td></tr>
+            <tr><th>등판능력</th><td>15°</td><th>브레이크</th><td>전·후 디스크 브레이크</td></tr>
+            <tr><th>타이어</th><td>20″ × 2.125, 알루미늄 휠</td><th>프레임</th><td>알루미늄 합금</td></tr>
+            <tr><th>크기</th><td>폭 694mm × 길이 1,726mm</td><th>무게</th><td>30.0kg (배터리 포함)</td></tr>
+            <tr><th>정격 적재량</th><td>175kg</td><th>권장 키</th><td>150~180cm</td></tr>
+            <tr><th>기타</th><td colspan="3">LCD 디스플레이, 후진 기어, 방향지시등, 전조등·후미등, 바구니, 벨</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">출처: MOBELIX 회사 소개서(2026.09), 정격 적재량은 사용설명서 기준. 사양은 제품 개선에 따라 바뀔 수 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="why">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Why MOBELIX</div>
+      <h2>렌탈 사업에<br>맞는 이유</h2>
+      <p>렌탈은 처음 타는 손님이 대부분입니다. 넘어지지 않고, 충전이 빠르고, 관리가 쉬운 차량이어야 회전율이 나옵니다.</p>
+    </div>
+    <div class="why">
+      <article><div class="k">CUSTOMER</div><h3>누구나 탈 수 있는 차량</h3><p>자전거를 못 타는 사람, 어린이, 어르신도 탈 수 있어 가족 단위 손님을 놓치지 않습니다.</p></article>
+      <article><div class="k">LOCATION</div><h3>사람이 머무는 곳이 상권</h3><p>유원지, 관광지, 산책로, 리조트와 캠핑장 등 시설 내 이동수단으로 운영합니다.</p></article>
+      <article><div class="k">OPERATION</div><h3>배터리만 바꾸면 다시 출발</h3><p>교체형 배터리로 충전 대기 없이 다음 손님을 받습니다. 1회 완충 전기료는 100~200원 수준입니다.</p></article>
+      <article><div class="k">DURABILITY</div><h3>관리가 쉬운 구조</h3><p>부식에 강한 알루미늄 프레임과 디스크 브레이크로 야외 운영에 맞췄습니다. <span class="ph">정기 점검과 A/S 지원 방식</span></p></article>
+      <article><div class="k">SUPPORT</div><h3>보조금과 친환경 정책</h3><p>지자체 친환경 정책과 연계된 보조금으로 초기 부담을 줄일 수 있습니다. <span class="ph">적용 가능 지역과 지원 범위 확인 필요</span></p></article>
+      <article><div class="k">MARKETING</div><h3>본사 공동 홍보</h3><p><span class="ph">SNS, 지역 축제 협업, 온라인 예약 채널 입점 등 본사 지원 내용</span></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="revenue">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Revenue</div>
+      <h2>수익 구조</h2>
+      <p>시간 단위 대여료가 기본 매출입니다. 주말과 성수기에 회전율이 올라가므로 운영 대수와 입지가 수익을 좌우합니다.</p>
+      <ul class="rev-list">
+        <li><b>대여료</b><span>30분, 1시간 단위 요금 <span class="ph">본사 권장가</span></span></li>
+        <li><b>단체·패키지</b><span>학교, 기업 워크숍, 리조트 객실 연계 상품</span></li>
+        <li><b>부가 매출</b><span><span class="ph">사진 촬영, 음료, 굿즈 등</span></span></li>
+      </ul>
+    </div>
+    <div class="calc" aria-label="예상 월 수익 계산기">
+      <div class="calc-grid">
+        <div class="calc-in">
+          <div class="field"><label for="c-units">운영 대수<output id="o-units"></output></label><input id="c-units" type="range" min="3" max="40" value="10"></div>
+          <div class="field"><label for="c-turns">1대당 하루 대여 횟수<output id="o-turns"></output></label><input id="c-turns" type="range" min="1" max="12" value="4"></div>
+          <div class="field"><label for="c-price">1회 대여료 (1시간)<output id="o-price"></output></label><input id="c-price" type="range" min="10000" max="50000" step="1000" value="20000"></div>
+          <div class="field"><label for="c-days">월 운영일<output id="o-days"></output></label><input id="c-days" type="range" min="8" max="30" value="22"></div>
+          <div class="field"><label for="c-cost">월 고정비 (임대료·인건비 등)<output id="o-cost"></output></label><input id="c-cost" type="range" min="0" max="1500" step="10" value="300"></div>
+        </div>
+        <div class="calc-out" aria-live="polite">
+          <div class="row"><span>월 대여 횟수</span><span id="r-rides"></span></div>
+          <div class="row"><span>월 예상 매출</span><span id="r-gross"></span></div>
+          <div class="row"><span>충전 전기료 (1회 200원 가정)</span><span id="r-power"></span></div>
+          <div class="row"><span>로열티 <span class="ph" id="r-roy-rate"></span></span><span id="r-roy"></span></div>
+          <div class="row"><span>월 고정비</span><span id="r-cost"></span></div>
+          <div class="total"><small>월 예상 영업이익 (세전)</small><b id="r-net"></b></div>
+        </div>
+      </div>
+      <p class="calc-note">대여료, 회전율, 고정비는 모두 예시 값이며 실제 수익을 보장하지 않습니다. <span class="ph">본사 운영 데이터와 로열티 조건으로 기본값 교체 필요</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="process">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Process</div>
+      <h2>창업 절차</h2>
+      <p>상담부터 오픈까지 본사 담당자가 함께합니다.</p>
+    </div>
+    <div>
+      <ol class="steps">
+        <li><h3>가맹 상담 신청</h3><p>아래 양식이나 전화로 신청하면 담당자가 연락드립니다.</p><span class="dur ph">1~2일</span></li>
+        <li><h3>상권·입지 분석</h3><p>희망 지역의 유동 인구, 주행 동선, 주차와 충전 공간, 인허가 여부를 확인합니다.</p><span class="dur ph">1~2주</span></li>
+        <li><h3>사업 설명 및 계약</h3><p>예상 수익, 비용, 계약 조건을 설명하고 가맹 계약을 맺습니다.</p><span class="dur ph">1주</span></li>
+        <li><h3>차량 배정·거점 구축</h3><p>운영 대수에 맞춰 차량과 예비 배터리를 배정하고 대여소와 충전 설비를 갖춥니다.</p><span class="dur ph">2~4주</span></li>
+        <li><h3>운영 교육</h3><p>대여·반납 절차, 탑승 안전 교육, 배터리 교체와 기본 정비를 교육합니다.</p><span class="dur ph">2~3일</span></li>
+        <li><h3>오픈 및 사후 관리</h3><p>오픈 초기 현장 지원 후 정기 점검과 A/S를 이어갑니다.</p><span class="dur ph">상시</span></li>
+      </ol>
+      <div class="cost">
+        <table>
+          <caption>예상 창업 비용 <span class="ph" style="font-weight:400">10대 기준 예시</span></caption>
+          <thead><tr><th>항목</th><th>내용</th><th>금액 (VAT 별도)</th></tr></thead>
+          <tbody>
+            <tr><td>가맹비</td><td>브랜드 사용, 상권 분석</td><td class="num ph">000만원</td></tr>
+            <tr><td>교육비</td><td>운영·안전 교육</td><td class="num ph">000만원</td></tr>
+            <tr><td>차량</td><td>4륜 전기자전거 10대</td><td class="num ph">0,000만원</td></tr>
+            <tr><td>예비 배터리·충전 설비</td><td>교체용 배터리, 충전기, 대여 부스</td><td class="num ph">000만원</td></tr>
+            <tr><td>보증금</td><td>계약 종료 시 반환</td><td class="num ph">000만원</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="2">합계</td><td class="num ph">0,000만원</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="faq">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">FAQ</div>
+      <h2>자주 묻는 질문</h2>
+      <p>더 궁금한 점은 상담 신청 때 남겨 주세요.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>자전거를 못 타는 손님도 탈 수 있나요?</summary><p>네. 네 바퀴로 서 있어 균형을 잡을 필요가 없고, 정차할 때 발을 디디지 않아도 됩니다. 권장 키는 150~180cm입니다.</p></details>
+      <details><summary>배터리는 얼마나 가고, 충전은 어떻게 하나요?</summary><p>1회 충전으로 약 70km를 달리며 완충까지 6~8시간 걸립니다. 배터리를 분리해 따로 충전할 수 있어 예비 배터리를 두면 대여를 멈추지 않고 운영할 수 있습니다.</p></details>
+      <details><summary>운영 경험이 없어도 시작할 수 있나요?</summary><p>네. 대여·반납·배터리 교체 위주의 단순한 운영이고, 오픈 전 교육과 초기 현장 지원이 포함됩니다.</p></details>
+      <details><summary>운영 장소는 직접 구해야 하나요?</summary><p>희망 지역을 알려 주시면 본사가 후보 입지를 함께 검토합니다. 공원이나 관광지는 지자체 점용 허가가 필요할 수 있어 인허가 여부도 함께 확인합니다. <span class="ph">본사 입지 확보 지원 범위</span></p></details>
+      <details><summary>고장 나면 어떻게 하나요?</summary><p><span class="ph">A/S 접수 방법, 처리 기간, 보증 기간 (사용설명서 13장 기준으로 작성 예정)</span></p></details>
+      <details><summary>운전면허가 필요한가요?</summary><p>PAS 방식의 전기자전거, 속도 제한 24km/h, 무게 30kg의 법적 규제를 모두 준수하였기에 운전 면허가 불필요하며, 번호판도 불필요합니다.</p></details>
+      <details><summary>계약 기간과 로열티는 어떻게 되나요?</summary><p><span class="ph">계약 기간 0년, 로열티 월 매출의 0% 또는 대당 월 00,000원</span></p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band form-band" id="apply">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Contact</div>
+      <h2>가맹 상담 신청</h2>
+      <p>남겨 주신 연락처로 담당자가 연락드립니다.</p>
+      <div class="contact-lines">
+        <div><b>PHONE</b><span id="t-phone">010-2879-8686</span><button class="copy" type="button" data-copy="t-phone">복사</button></div>
+        <div><b>EMAIL</b><span id="t-mail">jain@mobelix.co.kr</span><button class="copy" type="button" data-copy="t-mail">복사</button></div>
+        <div><b>CEO</b>김자인 대표</div>
+      </div>
+    </div>
+    <form class="inq" id="inq" novalidate>
+      <div><label for="f-name">이름</label><input id="f-name" name="name" autocomplete="name" value="홍길동"></div>
+      <div><label for="f-phone">연락처</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000"></div>
+      <div><label for="f-region">희망 지역</label><input id="f-region" name="region" placeholder="예: 강원 강릉 경포호 주변"></div>
+      <div><label for="f-type">희망 입지 유형</label>
+        <select id="f-type" name="type"><option>공원·산책로</option><option>유원지·관광지</option><option>리조트·캠핑장</option><option>기타 / 미정</option></select></div>
+      <div><label for="f-units">희망 운영 대수</label>
+        <select id="f-units" name="units"><option>5대 이하</option><option selected>6~10대</option><option>11~20대</option><option>20대 초과</option></select></div>
+      <div><label for="f-budget">예상 창업 자금</label>
+        <select id="f-budget" name="budget"><option>5천만원 미만</option><option selected>5천만~1억원</option><option>1억~2억원</option><option>2억원 이상</option></select></div>
+      <div class="full"><label for="f-msg">문의 내용</label><textarea id="f-msg" name="msg" placeholder="보유 부지 여부, 궁금한 점 등을 적어 주세요."></textarea></div>
+      <label class="check full" for="f-agree"><input id="f-agree" type="checkbox"> 상담을 위한 개인정보(이름, 연락처, 지역) 수집·이용에 동의합니다. <span class="ph">개인정보처리방침 링크</span></label>
+      <div class="full" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn" type="submit">상담 신청하기</button><span class="err" id="f-err" role="alert"></span></div>
+      <div class="sent" id="f-sent" role="status" hidden></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 MOBELIX · 대표 김자인 · 사업자등록번호 691-87-03269 · 가맹사업 정보공개서 등록번호 <span class="ph">0000000000</span></span>
+    <span>www.mobelix.co.kr</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var won=function(n){return Math.round(n).toLocaleString('ko-KR')+'원'};
+
+  // 제품 뷰어
+  var sets={
+    white:[['white-front','전면 사선'],['white-side','측면'],['white-front2','반대편 전면'],['white-rear','후면 사선'],['white-rear2','반대편 후면']],
+    navy:[['navy-front','전면 사선'],['navy-front2','반대편 전면'],['navy-side','측면'],['navy-side2','반대편 측면']]
+  };
+  var color='white',idx=0;
+  function render(){
+    var list=sets[color],th=$('v-thumbs');th.innerHTML='';
+    list.forEach(function(it,i){
+      var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed',i===idx?'true':'false');b.setAttribute('aria-label',it[1]);
+      var im=document.createElement('img');im.src='img/'+it[0]+'.webp';im.alt='';b.appendChild(im);
+      b.addEventListener('click',function(){idx=i;render()});th.appendChild(b);
+    });
+    var cur=list[idx];$('v-img').src='img/'+cur[0]+'.webp';$('v-img').alt=(color==='white'?'화이트':'네이비')+' 모델 '+cur[1];
+    $('c-white').setAttribute('aria-pressed',color==='white');$('c-navy').setAttribute('aria-pressed',color==='navy');
+  }
+  $('c-white').addEventListener('click',function(){color='white';idx=0;render()});
+  $('c-navy').addEventListener('click',function(){color='navy';idx=0;render()});
+  render();
+
+  // 수익 계산기
+  var ROYALTY=0; // 로열티 비율(%) — 본사 조건 확정 후 입력
+  function calc(){
+    var u=+$('c-units').value,t=+$('c-turns').value,p=+$('c-price').value,d=+$('c-days').value,c=+$('c-cost').value*10000;
+    $('o-units').textContent=u+'대';$('o-turns').textContent=t+'회';$('o-price').textContent=won(p);$('o-days').textContent=d+'일';$('o-cost').textContent=(+$('c-cost').value).toLocaleString('ko-KR')+'만원';
+    var rides=u*t*d,gross=rides*p,power=u*d*200,roy=gross*ROYALTY/100;
+    $('r-rides').textContent=rides.toLocaleString('ko-KR')+'회';
+    $('r-gross').textContent=won(gross);
+    $('r-power').textContent=won(power);
+    $('r-roy-rate').textContent='매출의 '+ROYALTY+'%';
+    $('r-roy').textContent=won(roy);
+    $('r-cost').textContent=won(c);
+    $('r-net').textContent=won(gross-power-roy-c);
+  }
+  ['c-units','c-turns','c-price','c-days','c-cost'].forEach(function(id){$(id).addEventListener('input',calc)});
+  calc();
+
+  // 복사 버튼
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=$(b.getAttribute('data-copy')),txt=el.textContent;
+      var done=function(){b.textContent='복사됨';setTimeout(function(){b.textContent='복사'},1500)};
+      var sel=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)};
+      try{navigator.clipboard.writeText(txt).then(done,sel)}catch(e){sel()}
+    });
+  });
+
+  // 상담 폼 (초안: 실제 접수 없음)
+  $('inq').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,err=$('f-err'),sent=$('f-sent'),miss=[];
+    if(!f.name.value.trim())miss.push('이름');
+    if(!/^[0-9\-\s+]{9,}$/.test(f.phone.value.trim()))miss.push('연락처');
+    if(!f.region.value.trim())miss.push('희망 지역');
+    if(miss.length){err.textContent=miss.join(', ')+'을(를) 입력해 주세요.';return}
+    if(!$('f-agree').checked){err.textContent='개인정보 수집·이용에 동의해 주세요.';return}
+    err.textContent='';
+    sent.textContent=f.name.value.trim()+'님, 신청 내용을 확인했습니다. 초안 단계라 실제로 접수되지는 않습니다.';
+    sent.hidden=false;
+  });
+})();
+</script>
+</body>
+</html>
