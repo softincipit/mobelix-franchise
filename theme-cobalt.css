@@ -1,9 +1,9 @@
 /* 코발트 블루 테마: 시원한 레저 톤. index.html 기본 토큰을 덮어씀 */
 :root{
   --bg:#F4F7FC;--surface:#FFFFFF;--ink:#0F1E3A;--muted:#52627E;--line:#D6E0F0;
-  --green:#0047AB;--green-2:#1F5BD1;--gold:#1F5BD1;--gold-soft:#DCE7FA;
-  --on-green:#FFFFFF;--on-green-muted:#D5E2FA;--band:#E8EFFA;
-  --accent:#FF8A3D;--cta-bg:#FFFFFF;--cta-ink:#0047AB;
+  --green:#2563C9;--green-2:#2E6FD8;--gold:#2563C9;--gold-soft:#DCE7FA;
+  --on-green:#FFFFFF;--on-green-muted:#E6EEFC;--band:#E8EFFA;
+  --accent:#FF8A3D;--cta-bg:#FFFFFF;--cta-ink:#1D4FA6;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -25,8 +25,8 @@
 
 /* 히어로: 세이지 그라데이션 + 가는 대형 타이포 */
 .hero{background:
-  radial-gradient(ellipse 70% 80% at 72% 38%, #6FA2FF 0%, rgba(111,162,255,0) 60%),
-  linear-gradient(160deg,#2F6FE0 0%,#0047AB 50%,#0B2A6B 100%)}
+  radial-gradient(ellipse 70% 80% at 72% 38%, #9CC2FF 0%, rgba(156,194,255,0) 60%),
+  linear-gradient(160deg,#5B97F2 0%,#2E6FD8 50%,#1D4FA6 100%)}
 .hero h1{font-weight:300;letter-spacing:-.035em;line-height:1.12}
 .hero h1 em{color:#CFE3FF;font-weight:400}
 .hero .kicker{color:#CFE3FF}
@@ -47,7 +47,7 @@ h2{font-weight:400;letter-spacing:-.03em}
 .feat .n{font-family:var(--f-body);font-style:normal;font-weight:300;color:var(--green-2)}
 
 /* 어두운 초록 영역(상담 신청, 수익 계산 결과) */
-.form-band{background:linear-gradient(160deg,#0047AB 0%,#0B2A6B 100%)}
+.form-band{background:linear-gradient(160deg,#2E6FD8 0%,#1D4FA6 100%)}
 .form-band .kicker,.form-band .contact-lines b,.calc-out .kicker{color:#CFE3FF}
 form.inq{border-radius:14px}
 form.inq input,form.inq select,form.inq textarea{border-radius:8px}
