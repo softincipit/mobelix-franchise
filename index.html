@@ -155,6 +155,9 @@ section.band.alt{background:var(--band)}
 .pat dt{color:var(--muted)}.pat dd{margin:0}
 @media (max-width:860px){.patents{grid-template-columns:1fr}}
 @media (max-width:480px){.pat{gap:16px;padding:16px}.pat-img{width:96px}.pat h4{font-size:16px}}
+.values-img{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 8px;overflow:hidden}
+.values-img img{width:100%;height:auto;display:block}
+@media (max-width:760px){.values-img{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:8px}}
 .brand-note{margin-top:28px;font-size:15px;color:var(--muted)}
 @media (max-width:760px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}.values article:nth-child(3){padding-left:0;border-left:0}}
 @media (max-width:440px){.values{grid-template-columns:1fr}.values article + article{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
@@ -346,11 +349,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <p>MOBELIX는 2023년 4륜 전기자전거 개발을 시작해 2025년 법인을 설립한 친환경 전기 모빌리티 브랜드입니다. 4륜 전기자전거를 직접 설계해 노약자와 여성도 안전하게 탈 수 있는 이동수단을 만듭니다.</p>
     </div>
     <div>
-      <div class="values">
-        <article><div class="en">PHILOSOPHY</div><h3>안전과 건강</h3><p>안전하고 건강한 생활을 중시하며, 모두에게 유익한 친환경 생활을 추구합니다.</p></article>
-        <article><div class="en">VALUE</div><h3>누구나 쉽게</h3><p>노약자와 여성도 안전하고 편리하게 쓸 수 있는 다용도 4륜 전기자전거를 만듭니다.</p></article>
-        <article><div class="en">PURPOSE</div><h3>친환경 이동</h3><p>탄소 배출이 거의 없는 이동수단으로 건강과 생활의 편리함을 함께 더합니다.</p></article>
-        <article><div class="en">MISSION</div><h3>기술과 책임</h3><p>기술 혁신과 사회적 책임을 동시에 실현하는 회사로 자리매김합니다.</p></article>
+      <div class="values-img">
+        <img src="img/value-philosophy.webp" alt="PHILOSOPHY 안전과 건강: 안전하고 건강한 생활을 중시하며, 모두에게 유익한 친환경 생활을 추구합니다." width="402" height="741" loading="lazy">
+        <img src="img/value-value.webp" alt="VALUE 누구나 쉽게: 노약자와 여성도 안전하고 편리하게 쓸 수 있는 다용도 4륜 전기자전거를 만듭니다." width="402" height="741" loading="lazy">
+        <img src="img/value-purpose.webp" alt="PURPOSE 친환경 이동: 탄소 배출이 거의 없는 이동수단으로 건강과 생활의 편리함을 함께 더합니다." width="402" height="741" loading="lazy">
+        <img src="img/value-mission.webp" alt="MISSION 기술과 책임: 기술 혁신과 사회적 책임을 동시에 실현하는 회사로 자리매김합니다." width="402" height="741" loading="lazy">
       </div>
     </div>
   </div>
