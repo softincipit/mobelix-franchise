@@ -90,7 +90,22 @@ nav.links a:hover{color:var(--ink)}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .hero-img{position:relative;min-width:0}
 .hero-img img{width:100%;filter:drop-shadow(0 24px 30px rgba(0,0,0,.35))}
-.hero-img .model{position:absolute;left:0;top:0;font-size:13px;letter-spacing:.3em;color:var(--gold);font-weight:700}
+.hero-stage{position:relative;aspect-ratio:1400/1100}
+.hero-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:translateX(6%) scale(.94);transition:opacity .9s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.hero-stage img.on{opacity:1;transform:none}
+.hero-stage img.out{opacity:0;transform:translateX(-6%) scale(.94)}
+.hero-dots{display:flex;justify-content:center;align-items:center;gap:4px;margin-top:6px}
+.hero-dots button{background:none;border:0;padding:8px 4px;cursor:pointer;display:flex}
+.hero-dots i{display:block;width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.4);transition:width .4s,background .4s;overflow:hidden;position:relative}
+.hero-dots .on i{width:36px;background:rgba(255,255,255,.35)}
+.hero-dots .on i::after{content:"";position:absolute;inset:0;background:#fff;border-radius:inherit;transform-origin:left;animation:dotfill var(--hero-dur,4s) linear forwards}
+.hero-img.paused .hero-dots .on i::after{animation:none;transform:none}
+@keyframes dotfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hero-play{margin-left:8px;width:28px;height:28px;padding:0!important;border-radius:99px;background:rgba(255,255,255,.18)!important;color:#fff;align-items:center;justify-content:center}
+.hero-play svg{fill:currentColor}.hero-play .pl{display:none}
+.hero-img.paused .hero-play .pz{display:none}.hero-img.paused .hero-play .pl{display:block}
+@media (prefers-reduced-motion:reduce){.hero-stage img{transform:none!important;transition:opacity .6s}}
+.hero-img .model{position:absolute;z-index:2;left:0;top:0;font-size:13px;letter-spacing:.3em;color:var(--gold);font-weight:700}
 .stats{container-type:inline-size;--stat-fs:clamp(16px,calc(8cqi - 15px),42px);display:flex;justify-content:space-between;gap:0 14px;border-top:1px solid color-mix(in srgb,var(--on-green) 18%,transparent)}
 .stats div{padding:22px 0 26px;flex:none;width:min-content}
 @media (max-width:860px){.stats div{width:auto}}
@@ -271,7 +286,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     </div>
     <div class="hero-img">
       <span class="model">NOVA 4</span>
-      <img src="img/white-side.webp" alt="MOBELIX 4륜 전기자전거 화이트 측면" width="1400" height="1029">
+      <div class="hero-stage" id="heroStage" aria-roledescription="carousel" aria-label="MOBELIX 화이트 4륜 전기자전거">
+        <img class="on" src="img/white-side.webp" alt="MOBELIX 4륜 전기자전거 화이트 측면" width="1400" height="1029">
+        <img src="img/white-front2.webp" alt="화이트 전면 사선" width="1391" height="1400" loading="lazy">
+        <img src="img/white-rear2.webp" alt="화이트 후면 사선" width="1400" height="1354" loading="lazy">
+        <img src="img/white-rear.webp" alt="화이트 반대편 후면" width="1376" height="1400" loading="lazy">
+        <img src="img/white-front.webp" alt="화이트 반대편 전면" width="1400" height="1303" loading="lazy">
+      </div>
+      <div class="hero-dots" id="heroDots">
+        <button type="button" class="on" aria-label="1번 이미지"><i></i></button>
+        <button type="button" aria-label="2번 이미지"><i></i></button>
+        <button type="button" aria-label="3번 이미지"><i></i></button>
+        <button type="button" aria-label="4번 이미지"><i></i></button>
+        <button type="button" aria-label="5번 이미지"><i></i></button>
+        <button type="button" class="hero-play" id="heroPlay" aria-label="일시정지"><svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path class="pz" d="M3 2h2v8H3zM7 2h2v8H7z"/><path class="pl" d="M3 1.5l7 4.5-7 4.5z"/></svg></button>
+      </div>
     </div>
   </div>
   <div class="wrap">
@@ -508,6 +537,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </footer>
 
+<script>
+// 히어로 이미지 슬라이드
+(function(){
+  var stage=document.getElementById('heroStage'); if(!stage) return;
+  var box=stage.parentNode, imgs=stage.querySelectorAll('img'), dots=document.querySelectorAll('#heroDots button:not(.hero-play)'), play=document.getElementById('heroPlay');
+  var cur=0, timer=null, DUR=4000, reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  box.style.setProperty('--hero-dur',DUR+'ms');
+  function go(n){
+    if(n===cur) return;
+    imgs[cur].classList.remove('on'); imgs[cur].classList.add('out'); dots[cur].classList.remove('on');
+    var prev=imgs[cur]; setTimeout(function(){prev.classList.remove('out')},1200);
+    cur=(n+imgs.length)%imgs.length;
+    imgs[cur].classList.remove('out'); imgs[cur].classList.add('on'); dots[cur].classList.add('on');
+  }
+  function start(){ stop(); box.classList.remove('paused'); play.setAttribute('aria-label','일시정지'); timer=setInterval(function(){go(cur+1)},DUR); }
+  function stop(){ clearInterval(timer); timer=null; }
+  function pause(){ stop(); box.classList.add('paused'); play.setAttribute('aria-label','재생'); }
+  dots.forEach(function(d,i){ d.addEventListener('click',function(){ go(i); if(timer) start(); }); });
+  play.addEventListener('click',function(){ timer?pause():start(); });
+  document.addEventListener('visibilitychange',function(){ if(document.hidden) stop(); else if(!box.classList.contains('paused')) start(); });
+  if(reduce) pause(); else start();
+})();
+</script>
 <script>
 (function(){
   var $=function(id){return document.getElementById(id)};
