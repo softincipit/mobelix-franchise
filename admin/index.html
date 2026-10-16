@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MOBELIX 관리자</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --bg:#F4F0E8;--surface:#FFFFFF;--ink:#16302A;--muted:#56665F;--line:#DDD6C8;
+  --green:#1B3A2F;--green-2:#2D5E4E;--gold:#B8924A;--gold-soft:#E9DCC0;
+  --on-green:#F4F0E8;--danger:#A23B2A;--logo-filter:none;
+  --f:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1D18;--surface:#16271F;--ink:#ECE7DC;--muted:#A6B5AC;--line:#2B3F36;
+    --green:#132A22;--green-2:#1E4237;--gold:#D4B06A;--gold-soft:#3A3322;--danger:#E3826F;
+    --logo-filter:invert(1);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1D18;--surface:#16271F;--ink:#ECE7DC;--muted:#A6B5AC;--line:#2B3F36;
+  --green:#132A22;--green-2:#1E4237;--gold:#D4B06A;--gold-soft:#3A3322;--danger:#E3826F;
+  --logo-filter:invert(1);color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:15px;line-height:1.6;word-break:keep-all}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.top{background:var(--green);color:var(--on-green)}
+.top .in{max-width:1200px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.top img{height:20px;filter:invert(1)}
+.top .tag{font-size:12px;letter-spacing:.24em;color:var(--gold);font-weight:700}
+.top .who{margin-left:auto;font-size:13px;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#1B1408;font-weight:700;border:0;border-radius:4px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:inherit;border:1px solid currentColor;padding:7px 12px;font-size:13px;font-weight:500}
+.btn:disabled{opacity:.6;cursor:wait}
+main{max-width:1200px;margin:0 auto;padding:28px 16px 60px}
+
+/* 로그인 */
+.login{max-width:380px;margin:48px auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:32px 28px}
+.login h1{font-size:22px;margin:0 0 4px}
+.login p.sub{margin:0 0 22px;color:var(--muted);font-size:14px}
+label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+input[type=email],input[type=password],input[type=search]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);font:inherit}
+.login .btn{width:100%;justify-content:center;margin-top:22px;padding:12px}
+.msg{margin-top:14px;font-size:14px;color:var(--danger)}
+.note{background:var(--gold-soft);border-radius:6px;padding:14px 16px;font-size:14px;margin-bottom:18px}
+.note code{font-size:13px}
+
+/* 목록 */
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+.bar h1{font-size:22px;margin:0 auto 0 0}
+.bar .count{color:var(--muted);font-size:14px;font-weight:500;margin-left:6px}
+.bar input{width:240px;max-width:100%;padding:8px 12px}
+.bar .btn.ghost{color:var(--ink);border-color:var(--line);background:var(--surface)}
+.tbl{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tbl th{background:var(--green);color:var(--on-green);font-size:13px;font-weight:700;text-align:left;padding:10px 12px;white-space:nowrap}
+.tbl td{border-top:1px solid var(--line);padding:11px 12px;font-size:14px;vertical-align:top}
+.tbl tr.row{cursor:pointer}
+.tbl tr.row:hover td{background:color-mix(in srgb,var(--gold) 8%,transparent)}
+.tbl .date{white-space:nowrap;color:var(--muted);font-size:13px}
+.tbl a{color:inherit}
+.detail td{background:var(--bg);padding:16px 18px}
+.detail dl{display:grid;grid-template-columns:110px 1fr;gap:6px 14px;margin:0 0 14px}
+.detail dt{color:var(--muted);font-size:13px}
+.detail dd{margin:0;white-space:pre-wrap}
+.del{background:transparent;border:1px solid var(--danger);color:var(--danger);border-radius:4px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.empty{text-align:center;color:var(--muted);padding:48px 16px;background:var(--surface);border:1px dashed var(--line);border-radius:8px}
+
+@media (max-width:760px){
+  .tbl thead{display:none}
+  .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+  .tbl tr.row{border-top:1px solid var(--line);padding:12px 14px}
+  .tbl tr.row td{border:0;padding:1px 0}
+  .tbl tr.row td[data-k]::before{content:attr(data-k);display:inline-block;width:64px;color:var(--muted);font-size:12px}
+  .detail dl{grid-template-columns:80px 1fr}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <img src="/img/logo.webp" alt="MOBELIX" width="121" height="20">
+    <span class="tag">ADMIN</span>
+    <span class="who" id="who" hidden></span>
+    <button class="btn ghost" id="logout" hidden>로그아웃</button>
+  </div>
+</header>
+
+<main>
+  <section id="loginView" hidden>
+    <form class="login" id="loginForm" novalidate>
+      <h1>관리자 로그인</h1>
+      <p class="sub">가맹 상담 신청 내역을 확인합니다.</p>
+      <div class="note" id="setupNote" hidden></div>
+      <label for="email">이메일</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" autocomplete="current-password" required>
+      <button class="btn" id="loginBtn" type="submit">로그인</button>
+      <p class="msg" id="loginMsg" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="listView" hidden>
+    <div class="bar">
+      <h1>상담 신청 <span class="count" id="count"></span></h1>
+      <input type="search" id="q" placeholder="이름·연락처·지역 검색" aria-label="검색">
+      <button class="btn ghost" id="reload">새로고침</button>
+      <button class="btn ghost" id="csv">엑셀(CSV) 받기</button>
+    </div>
+    <p class="msg" id="listMsg" role="alert"></p>
+    <div id="out"></div>
+  </section>
+</main>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const FIELDS = [
+  ["name","이름"],["phone","연락처"],["email","이메일"],["region","희망 지역"],
+  ["type","운영 형태"],["units","희망 대수"],["budget","투자 예산"],["msg","문의 내용"],["agree","개인정보 동의"]
+];
+let items = [], openId = null;
+
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = (iso) => new Date(iso).toLocaleString("ko-KR", {year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});
+
+async function api(path, opts = {}) {
+  const res = await fetch(path, {credentials:"same-origin", ...opts, headers:{"content-type":"application/json", ...(opts.headers||{})}});
+  let data = {}; try { data = await res.json(); } catch {}
+  return {status: res.status, data};
+}
+
+function show(view, email) {
+  $("#loginView").hidden = view !== "login";
+  $("#listView").hidden = view !== "list";
+  $("#logout").hidden = $("#who").hidden = view !== "list";
+  if (email) $("#who").textContent = email;
+}
+
+function setupNote(missing) {
+  const n = $("#setupNote");
+  if (!missing || !missing.length) { n.hidden = true; return; }
+  n.hidden = false;
+  n.innerHTML = "관리자 설정이 아직 끝나지 않았습니다. Netlify 환경 변수에 다음 값을 넣고 다시 배포해 주세요: " +
+    missing.map((m) => "<code>" + esc(m) + "</code>").join(", ");
+}
+
+async function init() {
+  const {data} = await api("/api/admin/session");
+  if (data.loggedIn) { show("list", data.email); load(); }
+  else { show("login"); setupNote(data.missing); $("#email").focus(); }
+}
+
+$("#loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("#email").value.trim(), password = $("#pw").value;
+  const m = $("#loginMsg"); m.textContent = "";
+  if (!email || !password) { m.textContent = "이메일과 비밀번호를 입력해 주세요."; return; }
+  const b = $("#loginBtn"); b.disabled = true; b.textContent = "확인 중…";
+  const {status, data} = await api("/api/admin/session", {method:"POST", body: JSON.stringify({email, password})});
+  b.disabled = false; b.textContent = "로그인";
+  if (status === 200) { $("#pw").value = ""; show("list", data.email); load(); }
+  else if (status === 503) { setupNote(data.missing); m.textContent = "관리자 설정이 필요합니다."; }
+  else m.textContent = "이메일 또는 비밀번호가 올바르지 않습니다.";
+});
+
+$("#logout").addEventListener("click", async () => {
+  await api("/api/admin/session", {method:"DELETE"});
+  items = []; $("#out").innerHTML = ""; show("login"); $("#email").focus();
+});
+
+async function load() {
+  $("#listMsg").textContent = "";
+  $("#out").innerHTML = '<div class="empty">불러오는 중…</div>';
+  const {status, data} = await api("/api/admin/submissions");
+  if (status === 401) { show("login"); return; }
+  if (status !== 200) { $("#out").innerHTML = ""; $("#listMsg").textContent = "목록을 불러오지 못했습니다. (" + (data.detail || status) + ")"; return; }
+  items = data.items || [];
+  render();
+}
+
+function filtered() {
+  const q = $("#q").value.trim().toLowerCase();
+  if (!q) return items;
+  return items.filter((s) => Object.values(s.data).join(" ").toLowerCase().includes(q));
+}
+
+function render() {
+  const list = filtered();
+  $("#count").textContent = items.length ? `${list.length} / ${items.length}건` : "";
+  if (!list.length) {
+    $("#out").innerHTML = '<div class="empty">' + (items.length ? "검색 결과가 없습니다." : "아직 접수된 상담 신청이 없습니다.") + "</div>";
+    return;
+  }
+  const rows = list.map((s) => {
+    const d = s.data;
+    let html = `<tr class="row" data-id="${esc(s.id)}" tabindex="0" aria-expanded="${openId === s.id}">
+      <td class="date" data-k="접수">${esc(fmt(s.created_at))}</td>
+      <td data-k="이름"><b>${esc(d.name)}</b></td>
+      <td data-k="연락처"><a href="tel:${esc(d.phone)}">${esc(d.phone)}</a></td>
+      <td data-k="이메일"><a href="mailto:${esc(d.email)}">${esc(d.email)}</a></td>
+      <td data-k="지역">${esc(d.region)}</td>
+      <td data-k="형태">${esc(d.type)}</td>
+      <td data-k="대수">${esc(d.units)}</td>
+    </tr>`;
+    if (openId === s.id) {
+      html += `<tr class="detail"><td colspan="7"><dl>` +
+        FIELDS.map(([k, l]) => `<dt>${l}</dt><dd>${esc(d[k]) || "-"}</dd>`).join("") +
+        `<dt>접수 번호</dt><dd>${esc(s.number)}</dd></dl>
+        <button class="del" data-del="${esc(s.id)}">이 신청 삭제</button></td></tr>`;
+    }
+    return html;
+  }).join("");
+  $("#out").innerHTML = `<table class="tbl"><thead><tr><th>접수일시</th><th>이름</th><th>연락처</th><th>이메일</th><th>희망 지역</th><th>운영 형태</th><th>희망 대수</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+$("#out").addEventListener("click", async (e) => {
+  if (e.target.closest("a")) return;
+  const del = e.target.closest("[data-del]");
+  if (del) {
+    const s = items.find((x) => x.id === del.dataset.del);
+    if (!confirm(`${s?.data.name || ""}님의 신청을 삭제할까요? 되돌릴 수 없습니다.`)) return;
+    del.disabled = true;
+    const {status} = await api("/api/admin/submissions?id=" + encodeURIComponent(del.dataset.del), {method:"DELETE"});
+    if (status === 200) { items = items.filter((x) => x.id !== del.dataset.del); openId = null; render(); }
+    else { del.disabled = false; $("#listMsg").textContent = "삭제하지 못했습니다."; }
+    return;
+  }
+  const row = e.target.closest("tr.row");
+  if (row) { openId = openId === row.dataset.id ? null : row.dataset.id; render(); }
+});
+$("#out").addEventListener("keydown", (e) => {
+  const row = e.target.closest("tr.row");
+  if (row && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); row.click(); }
+});
+$("#q").addEventListener("input", render);
+$("#reload").addEventListener("click", load);
+
+$("#csv").addEventListener("click", () => {
+  const list = filtered();
+  const head = ["접수일시", ...FIELDS.map((f) => f[1])];
+  const cell = (v) => '"' + String(v ?? "").replace(/"/g, '""') + '"';
+  const lines = [head.map(cell).join(","), ...list.map((s) => [fmt(s.created_at), ...FIELDS.map(([k]) => s.data[k])].map(cell).join(","))];
+  const blob = new Blob(["﻿" + lines.join("\r\n")], {type:"text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "mobelix-상담신청-" + new Date().toISOString().slice(0, 10) + ".csv";
+  a.click(); URL.revokeObjectURL(a.href);
+});
+
+init();
+</script>
+</body>
+</html>
