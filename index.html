@@ -632,10 +632,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     var list=sets[color],th=$('v-thumbs');th.innerHTML='';
     list.forEach(function(it,i){
       var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed',i===idx?'true':'false');b.setAttribute('aria-label',it[1]);
-      var im=document.createElement('img');im.src='img/'+it[0]+'.webp';im.alt='';b.appendChild(im);
+      var im=document.createElement('img');im.src='img/'+it[0]+'.webp?v=2';im.alt='';b.appendChild(im);
       b.addEventListener('click',function(){idx=i;render()});th.appendChild(b);
     });
-    var cur=list[idx];$('v-img').src='img/'+cur[0]+'.webp';$('v-img').alt=(color==='white'?'화이트':'네이비')+' 모델 '+cur[1];$('v-img').classList.toggle('on-white',color==='navy');
+    var cur=list[idx];$('v-img').src='img/'+cur[0]+'.webp?v=2';$('v-img').alt=(color==='white'?'화이트':'네이비')+' 모델 '+cur[1];$('v-img').classList.toggle('on-white',color==='navy');
     $('c-white').setAttribute('aria-pressed',color==='white');$('c-navy').setAttribute('aria-pressed',color==='navy');
   }
   $('c-white').addEventListener('click',function(){color='white';idx=0;render()});
