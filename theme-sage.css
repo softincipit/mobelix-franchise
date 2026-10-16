@@ -1,0 +1,54 @@
+/* 세이지 그린 테마: 자연·레저 톤. index.html 기본 토큰을 덮어씀 */
+:root{
+  --bg:#F3F5EE;--surface:#FFFFFF;--ink:#1E2A1C;--muted:#5B6857;--line:#DCE3D3;
+  --green:#3F5A33;--green-2:#5E7A4C;--gold:#6E8B4E;--gold-soft:#E4EBD6;
+  --on-green:#FFFFFF;--on-green-muted:#E1E8D6;--band:#E9EEDF;
+  --accent:#D9533A;--cta-bg:#F4F7EC;--cta-ink:#2E4226;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141A12;--surface:#1B2319;--ink:#E8EDE0;--muted:#A9B5A0;--line:#2C3828;
+    --green:#2C3F24;--green-2:#3F5A33;--gold:#A9C283;--gold-soft:#2B3622;
+    --on-green:#FFFFFF;--on-green-muted:#C9D4BC;--band:#182016;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141A12;--surface:#1B2319;--ink:#E8EDE0;--muted:#A9B5A0;--line:#2C3828;
+  --green:#2C3F24;--green-2:#3F5A33;--gold:#A9C283;--gold-soft:#2B3622;
+  --on-green:#FFFFFF;--on-green-muted:#C9D4BC;--band:#182016;
+}
+
+/* 버튼: 둥근 알약형 */
+.btn{border-radius:999px;background:var(--green);color:#fff;font-weight:500;letter-spacing:-.01em}
+.btn.line{border-radius:999px}
+.admin-btn{border-radius:999px}
+
+/* 히어로: 세이지 그라데이션 + 가는 대형 타이포 */
+.hero{background:
+  radial-gradient(ellipse 70% 80% at 72% 38%, #A3B888 0%, rgba(163,184,136,0) 60%),
+  linear-gradient(160deg,#6F8A58 0%,#4E6A40 45%,#33492A 100%)}
+.hero h1{font-weight:300;letter-spacing:-.035em;line-height:1.12}
+.hero h1 em{color:#E7F0C9;font-weight:400}
+.hero .kicker{color:#E7F0C9}
+.hero .lede{color:var(--on-green-muted);font-weight:300}
+.hero .btn{background:var(--cta-bg);color:var(--cta-ink)}
+.hero .btn.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.hero-img .model{color:#E7F0C9}
+.hero-img img{filter:drop-shadow(0 30px 40px rgba(20,35,15,.35))}
+
+/* 핵심 수치: 기울어진 명조 대신 가는 고딕 */
+.stats{border-top-color:rgba(255,255,255,.28)}
+.stats b{font-family:var(--f-body);font-style:normal;font-weight:300;color:#fff;letter-spacing:-.03em}
+.stats b small{color:var(--on-green-muted)}
+
+/* 섹션 제목도 가볍게 */
+h2{font-weight:400;letter-spacing:-.03em}
+.kicker{color:var(--gold)}
+.feat .n{font-family:var(--f-body);font-style:normal;font-weight:300;color:var(--green-2)}
+
+/* 어두운 초록 영역(상담 신청, 수익 계산 결과) */
+.form-band{background:linear-gradient(160deg,#4E6A40 0%,#33492A 100%)}
+.form-band .kicker,.form-band .contact-lines b,.calc-out .kicker{color:#E7F0C9}
+form.inq{border-radius:14px}
+form.inq input,form.inq select,form.inq textarea{border-radius:8px}
+.calc-out b{font-family:var(--f-body);font-style:normal;font-weight:300}
