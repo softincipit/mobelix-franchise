@@ -75,6 +75,9 @@ nav.links a:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:#1B1408;font-weight:700;border:0;border-radius:4px;padding:12px 22px;font-size:15px;text-decoration:none;cursor:pointer;font-family:inherit}
 .btn:hover{filter:brightness(1.07)}
 .btn.line{background:transparent;color:var(--on-green);border:1px solid color-mix(in srgb,var(--on-green) 55%,transparent)}
+.head-actions{display:flex;align-items:center;gap:10px}
+.admin-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:4px;padding:8px 12px}
+.admin-btn:hover{color:var(--ink);border-color:var(--muted)}
 @media (max-width:860px){nav.links{display:none}}
 
 /* 히어로 */
@@ -243,7 +246,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <a href="#process">창업 절차</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn" href="#apply">가맹 상담</a>
+    <div class="head-actions">
+      <a class="admin-btn" href="/admin/" aria-label="관리자 로그인"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Admin</a>
+      <a class="btn" href="#apply">가맹 상담</a>
+    </div>
   </div>
 </header>
 
