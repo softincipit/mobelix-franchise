@@ -131,6 +131,17 @@ section.band.alt{background:var(--band)}
 .values .en{font-size:11px;letter-spacing:.28em;color:var(--gold);font-weight:700}
 .values h3{margin-top:6px}
 .values p{margin-top:8px;color:var(--muted);font-size:14.5px}
+.history{padding-bottom:72px}
+.history-title{font-size:clamp(20px,2.2vw,26px);margin-top:8px}
+.history-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;margin-top:28px}
+.hy{position:relative;padding-top:28px;border-top:1px solid var(--line)}
+.hy::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--green)}
+.hy h3{font-size:22px;font-weight:800;color:var(--green);letter-spacing:.02em}
+.hy ul{list-style:none;margin:16px 0 0;padding:0}
+.hy li{display:flex;gap:14px;padding:6px 0;font-size:14.5px;line-height:1.5}
+.hy li span{flex:none;width:34px;color:var(--muted);font-weight:600}
+@media (max-width:860px){.history-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 28px}}
+@media (max-width:480px){.history-grid{grid-template-columns:1fr}}
 .brand-note{margin-top:28px;font-size:15px;color:var(--muted)}
 @media (max-width:760px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}.values article:nth-child(3){padding-left:0;border-left:0}}
 @media (max-width:440px){.values{grid-template-columns:1fr}.values article + article{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
@@ -328,7 +339,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <article><div class="en">PURPOSE</div><h3>친환경 이동</h3><p>탄소 배출이 거의 없는 이동수단으로 건강과 생활의 편리함을 함께 더합니다.</p></article>
         <article><div class="en">MISSION</div><h3>기술과 책임</h3><p>기술 혁신과 사회적 책임을 동시에 실현하는 회사로 자리매김합니다.</p></article>
       </div>
-      <p class="brand-note"><span class="ph">회사 연혁, 특허, KC 등 인증 내역</span></p>
+    </div>
+  </div>
+  <div class="wrap history">
+    <div class="kicker">History</div>
+    <h3 class="history-title">회사 연혁</h3>
+    <div class="history-grid">
+        <div class="hy"><h3>2026</h3><ul><li><span>3월</span>MOBELIX-JOY 4 개발</li><li><span>4월</span>MOBELIX-PRIME 4 개발</li><li><span>4월</span>육군공병학교 MOBELIX-PRIME 4 실증 시작</li><li><span>5월</span>육군공병학교 MOBELIX-PRIME 4 실증 완료</li><li><span>9월</span>벤처기업 인증</li></ul></div>
+        <div class="hy"><h3>2025</h3><ul><li><span>1월</span>모벨릭스(주) 회사 설립</li><li><span>2월</span>4륜 자전거 특허 출원</li><li><span>4월</span>여성기업 인증</li><li><span>7월</span>중소기업 확인</li><li><span>9월</span>한국산업기술진흥협회 연구개발전담부서 인증</li><li><span>11월</span>한국산업기술진흥협회 회원사 등록</li><li><span>12월</span>특허 2개 등록</li></ul></div>
+        <div class="hy"><h3>2024</h3><ul><li><span>1월</span>설계 완성</li><li><span>3월</span>시제품 완성</li><li><span>4월</span>테스트 운행</li><li><span>9월</span>조향 장치 특허 출원</li></ul></div>
+        <div class="hy"><h3>2023</h3><ul><li><span>3월</span>4륜 전기자전거 R&amp;D 착수</li><li><span>8월</span>1차 프로토타입 완성</li><li><span>11월</span>시제품 개발 착수</li></ul></div>
     </div>
   </div>
 </section>
