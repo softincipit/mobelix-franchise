@@ -52,3 +52,5 @@ h2{font-weight:400;letter-spacing:-.03em}
 form.inq{border-radius:14px}
 form.inq input,form.inq select,form.inq textarea{border-radius:8px}
 .calc-out b{font-family:var(--f-body);font-style:normal;font-weight:300}
+.calc-out .total b{color:#fff;font-weight:400}
+.calc-out .row span.ph{color:#6B5300}
