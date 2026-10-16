@@ -469,19 +469,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div><b>CEO</b>김자인 대표</div>
       </div>
     </div>
-    <form class="inq" id="inq" novalidate>
-      <div><label for="f-name">이름</label><input id="f-name" name="name" autocomplete="name" value="홍길동"></div>
+    <form class="inq" id="inq" name="franchise-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="franchise-inquiry">
+      <p hidden><label>비워 두세요 <input name="bot-field"></label></p>
+      <div><label for="f-name">이름</label><input id="f-name" name="name" autocomplete="name"></div>
       <div><label for="f-phone">연락처</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000"></div>
+      <div><label for="f-email">이메일</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="example@email.com"></div>
       <div><label for="f-region">희망 지역</label><input id="f-region" name="region" placeholder="예: 강원 강릉 경포호 주변"></div>
       <div><label for="f-type">희망 입지 유형</label>
         <select id="f-type" name="type"><option>공원·산책로</option><option>유원지·관광지</option><option>리조트·캠핑장</option><option>기타 / 미정</option></select></div>
       <div><label for="f-units">희망 운영 대수</label>
         <select id="f-units" name="units"><option>5대 이하</option><option selected>6~10대</option><option>11~20대</option><option>20대 초과</option></select></div>
-      <div><label for="f-budget">예상 창업 자금</label>
+      <div class="full"><label for="f-budget">예상 창업 자금</label>
         <select id="f-budget" name="budget"><option>5천만원 미만</option><option selected>5천만~1억원</option><option>1억~2억원</option><option>2억원 이상</option></select></div>
       <div class="full"><label for="f-msg">문의 내용</label><textarea id="f-msg" name="msg" placeholder="보유 부지 여부, 궁금한 점 등을 적어 주세요."></textarea></div>
-      <label class="check full" for="f-agree"><input id="f-agree" type="checkbox"> 상담을 위한 개인정보(이름, 연락처, 지역) 수집·이용에 동의합니다. <span class="ph">개인정보처리방침 링크</span></label>
-      <div class="full" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn" type="submit">상담 신청하기</button><span class="err" id="f-err" role="alert"></span></div>
+      <label class="check full" for="f-agree"><input id="f-agree" name="agree" type="checkbox" value="동의"> 상담을 위한 개인정보(이름, 연락처, 이메일, 지역) 수집·이용에 동의합니다. <span class="ph">개인정보처리방침 링크</span></label>
+      <div class="full" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn" type="submit" id="f-submit">상담 신청하기</button><span class="err" id="f-err" role="alert"></span></div>
       <div class="sent" id="f-sent" role="status" hidden></div>
     </form>
   </div>
@@ -547,18 +550,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     });
   });
 
-  // 상담 폼 (초안: 실제 접수 없음)
+  // 상담 폼: Netlify Forms로 접수 (Netlify 관리 화면 > Forms 에서 확인)
   $('inq').addEventListener('submit',function(e){
     e.preventDefault();
-    var f=e.target,err=$('f-err'),sent=$('f-sent'),miss=[];
+    var f=e.target,err=$('f-err'),sent=$('f-sent'),btn=$('f-submit'),miss=[];
     if(!f.name.value.trim())miss.push('이름');
     if(!/^[0-9\-\s+]{9,}$/.test(f.phone.value.trim()))miss.push('연락처');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim()))miss.push('이메일');
     if(!f.region.value.trim())miss.push('희망 지역');
-    if(miss.length){err.textContent=miss.join(', ')+'을(를) 입력해 주세요.';return}
+    if(miss.length){err.textContent=miss.join(', ')+'을(를) 확인해 주세요.';return}
     if(!$('f-agree').checked){err.textContent='개인정보 수집·이용에 동의해 주세요.';return}
-    err.textContent='';
-    sent.textContent=f.name.value.trim()+'님, 신청 내용을 확인했습니다. 초안 단계라 실제로 접수되지는 않습니다.';
-    sent.hidden=false;
+    err.textContent='';btn.disabled=true;btn.textContent='보내는 중…';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){
+        if(!r.ok)throw new Error(r.status);
+        sent.textContent=f.name.value.trim()+'님, 상담 신청이 접수되었습니다. 담당자가 곧 연락드리겠습니다.';
+        sent.hidden=false;f.reset();
+      })
+      .catch(function(){
+        err.textContent='신청을 보내지 못했습니다. 잠시 후 다시 시도하시거나 010-2879-8686으로 연락 주세요.';
+      })
+      .then(function(){btn.disabled=false;btn.textContent='상담 신청하기'});
   });
 })();
 </script>
