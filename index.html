@@ -90,13 +90,14 @@ nav.links a:hover{color:var(--ink)}
 .hero-img{position:relative;min-width:0}
 .hero-img img{width:100%;filter:drop-shadow(0 24px 30px rgba(0,0,0,.35))}
 .hero-img .model{position:absolute;left:0;top:0;font-size:13px;letter-spacing:.3em;color:var(--gold);font-weight:700}
-.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid color-mix(in srgb,var(--on-green) 18%,transparent)}
-.stats div{padding:22px 12px 26px 0}
-.stats b{display:block;font-family:var(--f-num);font-style:italic;font-weight:700;font-size:clamp(30px,3.6vw,42px);line-height:1.1;color:var(--gold);font-variant-numeric:lining-nums}
+.stats{container-type:inline-size;--stat-fs:clamp(16px,calc(8cqi - 15px),42px);display:flex;justify-content:space-between;gap:0 14px;border-top:1px solid color-mix(in srgb,var(--on-green) 18%,transparent)}
+.stats div{padding:22px 0 26px;flex:none;width:min-content}
+@media (max-width:860px){.stats div{width:auto}}
+.stats b{display:block;font-family:var(--f-num);font-style:italic;font-weight:700;font-size:var(--stat-fs);line-height:1.1;color:var(--gold);font-variant-numeric:lining-nums;white-space:nowrap}
 .stats b small{font-family:var(--f-body);font-style:normal;font-size:14px;font-weight:500;color:var(--on-green-muted);margin-left:4px}
-.stats span{font-size:13px;color:var(--on-green-muted)}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:40px 24px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:480px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stats span{display:block;font-size:13px;line-height:1.5;margin-top:4px;color:var(--on-green-muted);overflow-wrap:normal}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:40px 24px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));--stat-fs:clamp(18px,calc(8cqi - 8px),42px)}}
+@media (max-width:480px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));--stat-fs:clamp(18px,calc(12cqi - 8px),42px)}}
 
 /* 섹션 공통 */
 section.band{padding-block:80px;border-top:1px solid var(--line)}
