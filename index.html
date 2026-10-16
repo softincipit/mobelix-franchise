@@ -166,6 +166,8 @@ section.band.alt{background:var(--band)}
 .viewer{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
 .viewer-main{aspect-ratio:3/2;max-width:100%;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 85%,color-mix(in srgb,var(--gold) 14%,transparent),transparent 60%)}
 .viewer-main{overflow:hidden;position:relative}.viewer-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px}
+.viewer-main img.on-white{mix-blend-mode:multiply}
+@media (prefers-color-scheme:dark){.viewer-main img.on-white{mix-blend-mode:normal;border-radius:6px}}
 .viewer-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:14px;align-items:center}
 .thumbs{display:flex;flex-wrap:wrap;gap:8px}
 .thumbs button{width:68px;height:48px;padding:4px;border:1px solid var(--line);background:var(--bg);border-radius:4px;cursor:pointer}
@@ -633,7 +635,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       var im=document.createElement('img');im.src='img/'+it[0]+'.webp';im.alt='';b.appendChild(im);
       b.addEventListener('click',function(){idx=i;render()});th.appendChild(b);
     });
-    var cur=list[idx];$('v-img').src='img/'+cur[0]+'.webp';$('v-img').alt=(color==='white'?'화이트':'네이비')+' 모델 '+cur[1];
+    var cur=list[idx];$('v-img').src='img/'+cur[0]+'.webp';$('v-img').alt=(color==='white'?'화이트':'네이비')+' 모델 '+cur[1];$('v-img').classList.toggle('on-white',color==='navy');
     $('c-white').setAttribute('aria-pressed',color==='white');$('c-navy').setAttribute('aria-pressed',color==='navy');
   }
   $('c-white').addEventListener('click',function(){color='white';idx=0;render()});
