@@ -202,6 +202,9 @@ table{width:100%;border-collapse:collapse;font-size:14.5px}
 .src{font-size:12.5px;color:var(--muted);margin-top:8px}
 
 /* 장점 */
+.why-img{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.why-img img{width:100%;height:auto;display:block}
+@media (max-width:560px){.why-img{grid-template-columns:1fr}}
 .why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--green)}
 .why article{padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
 .why article:nth-child(odd){border-right:1px solid var(--line)}
@@ -408,13 +411,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <h2>렌탈 사업에<br>맞는 이유</h2>
       <p>렌탈은 처음 타는 손님이 대부분입니다. 넘어지지 않고, 충전이 빠르고, 관리가 쉬운 차량이어야 회전율이 나옵니다.</p>
     </div>
-    <div class="why">
-      <article><div class="k">CUSTOMER</div><h3>누구나 탈 수 있는 차량</h3><p>자전거를 못 타는 사람, 어린이, 어르신도 탈 수 있어 가족 단위 손님을 놓치지 않습니다.</p></article>
-      <article><div class="k">LOCATION</div><h3>사람이 머무는 곳이 상권</h3><p>유원지, 관광지, 산책로, 리조트와 캠핑장 등 시설 내 이동수단으로 운영합니다.</p></article>
-      <article><div class="k">OPERATION</div><h3>배터리만 바꾸면 다시 출발</h3><p>교체형 배터리로 충전 대기 없이 다음 손님을 받습니다. 1회 완충 전기료는 100~200원 수준입니다.</p></article>
-      <article><div class="k">DURABILITY</div><h3>관리가 쉬운 구조</h3><p>부식에 강한 알루미늄 프레임과 디스크 브레이크로 야외 운영에 맞췄습니다.</p></article>
-      <article><div class="k">INSURANCE</div><h3>생산물배상책임보험</h3><p>삼성화재 보험 가입 : 보상한도 3억</p></article>
-      <article><div class="k">MARKETING</div><h3>본사 공동 홍보</h3><p>SNS 광고 홍보, 지역 축제 협업 등 본사에서 마케팅 지원</p></article>
+    <div class="why-img">
+      <img src="img/why-customer.webp" alt="CUSTOMER 누구나 탈 수 있는 차량: 자전거를 못 타는 사람, 어린이, 어르신도 탈 수 있어 가족 단위 손님을 놓치지 않습니다." width="800" height="675" loading="lazy">
+      <img src="img/why-location.webp" alt="LOCATION 사람이 머무는 곳이 상권: 유원지, 관광지, 산책로, 리조트와 캠핑장 등 시설 내 이동수단으로 운영합니다." width="800" height="675" loading="lazy">
+      <img src="img/why-operation.webp" alt="OPERATION 배터리만 바꾸면 다시 출발: 교체형 배터리로 충전 대기 없이 다음 손님을 받습니다. 1회 완충 전기료는 100~200원 수준입니다." width="800" height="675" loading="lazy">
+      <img src="img/why-durability.webp" alt="DURABILITY 관리가 쉬운 구조: 부식에 강한 알루미늄 프레임과 디스크 브레이크로 야외 운영에 맞췄습니다." width="800" height="675" loading="lazy">
+      <img src="img/why-insurance.webp" alt="INSURANCE 생산물배상책임보험: 삼성화재 보험 가입, 보상한도 3억" width="800" height="675" loading="lazy">
+      <img src="img/why-marketing.webp" alt="MARKETING 본사 공동 홍보: SNS 광고 홍보, 지역 축제 협업 등 본사에서 마케팅 지원" width="800" height="675" loading="lazy">
     </div>
   </div>
 </section>
