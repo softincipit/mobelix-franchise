@@ -66,6 +66,7 @@ img{display:block;max-width:100%;height:auto}
 .draft-bar .wrap{padding-block:8px}
 
 /* 헤더 */
+html{scroll-padding-top:84px}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
 .logo img{height:22px;width:auto;filter:var(--logo-filter)}
@@ -286,12 +287,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="MOBELIX 처음으로"><img src="img/logo.webp" alt="MOBELIX" width="127" height="21"></a>
     <nav class="links" aria-label="주요 메뉴">
-      <a href="#brand">브랜드</a>
       <a href="#product">제품</a>
       <a href="#why">가맹 장점</a>
       <a href="#revenue">수익 구조</a>
       <a href="#process">창업 절차</a>
       <a href="#faq">FAQ</a>
+      <a href="#brand">브랜드</a>
     </nav>
     <div class="head-actions">
       <a class="admin-btn" href="/admin/" aria-label="관리자 로그인"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Admin</a>
@@ -343,7 +344,170 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </section>
 
-<section class="band" id="brand">
+<section class="band" id="product">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Product</div>
+      <h2>전복되지 않는<br>4륜 전기자전거</h2>
+      <p>2륜과 3륜 자전거로는 구현할 수 없는 구조입니다. 회전할 때 안쪽 바퀴가 바깥쪽보다 느리게 돌도록 후륜에 차동기어를 넣어, 렌탈 고객이 처음 타도 안정적으로 방향을 바꿉니다.</p>
+    </div>
+    <div>
+      <div class="viewer">
+        <div class="viewer-main"><img id="v-img" src="img/white-front.webp" alt="화이트 모델 전면 사선" width="1400" height="1303"></div>
+        <div class="viewer-bar">
+          <div class="thumbs" id="v-thumbs" role="group" aria-label="보는 각도"></div>
+          <div class="colors" role="group" aria-label="색상">
+            <button type="button" id="c-white" aria-pressed="true"><i style="background:#F2F2F0"></i>화이트</button>
+            <button type="button" id="c-navy" aria-pressed="false"><i style="background:#1E2741"></i>네이비</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat">
+        <article><span class="n">01</span><div><h3>회전 차동기어</h3><p>후륜 차동기어가 좌우 바퀴 회전차를 보정해 커브에서도 기울지 않습니다.</p></div></article>
+        <article><span class="n">02</span><div><h3>10cm 스윙암 서스펜션</h3><p>약 10cm 스윙암 플로팅 구조와 듀얼 서스펜션으로 잔디밭, 비포장도로의 요철을 흡수합니다.</p></div></article>
+        <article><span class="n">03</span><div><h3>PAS 전기모터 보조</h3><p>페달을 밟으면 모터가 힘을 보태 작은 힘으로도 15° 경사를 오릅니다.</p></div></article>
+        <article><span class="n">04</span><div><h3>교체형 배터리</h3><p>안장 아래 레버를 젖혀 배터리를 바로 바꿉니다. 충전된 예비 배터리로 대여를 쉬지 않고 돌릴 수 있습니다.</p></div></article>
+        <article><span class="n">05</span><div><h3>후진 기어와 방향지시등</h3><p>정지 후 후진이 가능하고, 전후면 방향지시등과 전조등, 후미등을 갖췄습니다.</p></div></article>
+        <article><span class="n">06</span><div><h3>대형 바구니, 안전 주차</h3><p>뒤쪽 바구니에 짐이나 소형 반려견을 태우고, 받침대 없이도 그대로 세워 둡니다.</p></div></article>
+      </div>
+
+      <div class="details">
+        <figure><img src="img/d-display.webp" alt="LCD 계기판" loading="lazy" width="1200" height="800"><figcaption><b>LCD 계기판</b><span>속도, 단수, 배터리 잔량 표시</span></figcaption></figure>
+        <figure><img src="img/d-suspension.webp" alt="전조등과 듀얼 서스펜션" loading="lazy" width="1200" height="800"><figcaption><b>전조등과 듀얼 서스펜션</b><span>야간 주행과 노면 충격 흡수</span></figcaption></figure>
+        <figure><img src="img/d-axle.webp" alt="전륜 구조와 디스크 브레이크" loading="lazy" width="1200" height="800"><figcaption><b>전·후 디스크 브레이크</b><span>네 바퀴 모두 안정적으로 제동</span></figcaption></figure>
+        <figure><img src="img/d-battery.webp" alt="48V 20Ah 배터리" loading="lazy" width="1200" height="800"><figcaption><b>48V 20Ah 배터리</b><span>삼성SDI 셀, 잠금 키로 분리</span></figcaption></figure>
+        <figure><img src="img/d-saddle.webp" alt="인체공학 안장" loading="lazy" width="1200" height="800"><figcaption><b>와이드 안장</b><span>각도 조절, 장거리에도 편안한 착석감</span></figcaption></figure>
+        <figure><img src="img/d-mirror.webp" alt="후시경과 그립" loading="lazy" width="1200" height="800"><figcaption><b>후시경과 그립</b><span>후방 시야 확보, 인체공학 핸들바</span></figcaption></figure>
+      </div>
+
+      <div class="spec-wrap">
+        <table class="spec">
+          <caption>제원 및 사양</caption>
+          <tbody>
+            <tr><th>주행방식</th><td>PAS 페달 보조</td><th>모터</th><td>48V 350W 후륜 차동 모터</td></tr>
+            <tr><th>주행거리</th><td>70km (파워 어시스트, 1인 기준)</td><th>배터리</th><td>48V 20Ah 리튬 (삼성SDI 셀)</td></tr>
+            <tr><th>최고속도</th><td>24km/h</td><th>충전</th><td>전용 충전기 54.6V 2A, 6~8시간</td></tr>
+            <tr><th>등판능력</th><td>15°</td><th>브레이크</th><td>전·후 디스크 브레이크</td></tr>
+            <tr><th>타이어</th><td>20″ × 2.125, 알루미늄 휠</td><th>프레임</th><td>알루미늄 합금</td></tr>
+            <tr><th>크기</th><td>폭 694mm × 길이 1,726mm</td><th>무게</th><td>30.0kg (배터리 포함)</td></tr>
+            <tr><th>정격 적재량</th><td>175kg</td><th>권장 키</th><td>150~180cm</td></tr>
+            <tr><th>기타</th><td colspan="3">LCD 디스플레이, 후진 기어, 방향지시등, 전조등·후미등, 바구니, 벨</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">출처: MOBELIX 회사 소개서(2026.09), 정격 적재량은 사용설명서 기준. 사양은 제품 개선에 따라 바뀔 수 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="why">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Why MOBELIX</div>
+      <h2>렌탈 사업에<br>맞는 이유</h2>
+      <p>렌탈은 처음 타는 손님이 대부분입니다. 넘어지지 않고, 충전이 빠르고, 관리가 쉬운 차량이어야 회전율이 나옵니다.</p>
+    </div>
+    <div class="why">
+      <article><div class="k">CUSTOMER</div><h3>누구나 탈 수 있는 차량</h3><p>자전거를 못 타는 사람, 어린이, 어르신도 탈 수 있어 가족 단위 손님을 놓치지 않습니다.</p></article>
+      <article><div class="k">LOCATION</div><h3>사람이 머무는 곳이 상권</h3><p>유원지, 관광지, 산책로, 리조트와 캠핑장 등 시설 내 이동수단으로 운영합니다.</p></article>
+      <article><div class="k">OPERATION</div><h3>배터리만 바꾸면 다시 출발</h3><p>교체형 배터리로 충전 대기 없이 다음 손님을 받습니다. 1회 완충 전기료는 100~200원 수준입니다.</p></article>
+      <article><div class="k">DURABILITY</div><h3>관리가 쉬운 구조</h3><p>부식에 강한 알루미늄 프레임과 디스크 브레이크로 야외 운영에 맞췄습니다. <span class="ph">정기 점검과 A/S 지원 방식</span></p></article>
+      <article><div class="k">SUPPORT</div><h3>보조금과 친환경 정책</h3><p>지자체 친환경 정책과 연계된 보조금으로 초기 부담을 줄일 수 있습니다. <span class="ph">적용 가능 지역과 지원 범위 확인 필요</span></p></article>
+      <article><div class="k">MARKETING</div><h3>본사 공동 홍보</h3><p><span class="ph">SNS, 지역 축제 협업, 온라인 예약 채널 입점 등 본사 지원 내용</span></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="revenue">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Revenue</div>
+      <h2>수익 구조</h2>
+      <p>시간 단위 대여료가 기본 매출입니다. 주말과 성수기에 회전율이 올라가므로 운영 대수와 입지가 수익을 좌우합니다.</p>
+      <ul class="rev-list">
+        <li><b>대여료</b><span>30분, 1시간 단위 요금 <span class="ph">본사 권장가</span></span></li>
+        <li><b>단체·패키지</b><span>학교, 기업 워크숍, 리조트 객실 연계 상품</span></li>
+        <li><b>부가 매출</b><span><span class="ph">사진 촬영, 음료, 굿즈 등</span></span></li>
+      </ul>
+    </div>
+    <div class="calc" aria-label="예상 월 수익 계산기">
+      <div class="calc-grid">
+        <div class="calc-in">
+          <div class="field"><label for="c-units">운영 대수<output id="o-units"></output></label><input id="c-units" type="range" min="3" max="40" value="10"></div>
+          <div class="field"><label for="c-turns">1대당 하루 대여 횟수<output id="o-turns"></output></label><input id="c-turns" type="range" min="1" max="12" value="4"></div>
+          <div class="field"><label for="c-price">1회 대여료 (1시간)<output id="o-price"></output></label><input id="c-price" type="range" min="10000" max="50000" step="1000" value="20000"></div>
+          <div class="field"><label for="c-days">월 운영일<output id="o-days"></output></label><input id="c-days" type="range" min="8" max="30" value="22"></div>
+          <div class="field"><label for="c-cost">월 고정비 (임대료·인건비 등)<output id="o-cost"></output></label><input id="c-cost" type="range" min="0" max="1500" step="10" value="300"></div>
+        </div>
+        <div class="calc-out" aria-live="polite">
+          <div class="row"><span>월 대여 횟수</span><span id="r-rides"></span></div>
+          <div class="row"><span>월 예상 매출</span><span id="r-gross"></span></div>
+          <div class="row"><span>충전 전기료 (1회 200원 가정)</span><span id="r-power"></span></div>
+          <div class="row"><span>로열티 <span class="ph" id="r-roy-rate"></span></span><span id="r-roy"></span></div>
+          <div class="row"><span>월 고정비</span><span id="r-cost"></span></div>
+          <div class="total"><small>월 예상 영업이익 (세전)</small><b id="r-net"></b></div>
+        </div>
+      </div>
+      <p class="calc-note">대여료, 회전율, 고정비는 모두 예시 값이며 실제 수익을 보장하지 않습니다. <span class="ph">본사 운영 데이터와 로열티 조건으로 기본값 교체 필요</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="process">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">Process</div>
+      <h2>창업 절차</h2>
+      <p>상담부터 오픈까지 본사 담당자가 함께합니다.</p>
+    </div>
+    <div>
+      <ol class="steps">
+        <li><h3>가맹 상담 신청</h3><p>아래 양식이나 전화로 신청하면 담당자가 연락드립니다.</p><span class="dur ph">1~2일</span></li>
+        <li><h3>상권·입지 분석</h3><p>희망 지역의 유동 인구, 주행 동선, 주차와 충전 공간, 인허가 여부를 확인합니다.</p><span class="dur ph">1~2주</span></li>
+        <li><h3>사업 설명 및 계약</h3><p>예상 수익, 비용, 계약 조건을 설명하고 가맹 계약을 맺습니다.</p><span class="dur ph">1주</span></li>
+        <li><h3>차량 배정·거점 구축</h3><p>운영 대수에 맞춰 차량과 예비 배터리를 배정하고 대여소와 충전 설비를 갖춥니다.</p><span class="dur ph">2~4주</span></li>
+        <li><h3>운영 교육</h3><p>대여·반납 절차, 탑승 안전 교육, 배터리 교체와 기본 정비를 교육합니다.</p><span class="dur ph">2~3일</span></li>
+        <li><h3>오픈 및 사후 관리</h3><p>오픈 초기 현장 지원 후 정기 점검과 A/S를 이어갑니다.</p><span class="dur ph">상시</span></li>
+      </ol>
+      <div class="cost">
+        <table>
+          <caption>예상 창업 비용 <span class="ph" style="font-weight:400">10대 기준 예시</span></caption>
+          <thead><tr><th>항목</th><th>내용</th><th>금액 (VAT 별도)</th></tr></thead>
+          <tbody>
+            <tr><td>가맹비</td><td>브랜드 사용, 상권 분석</td><td class="num ph">000만원</td></tr>
+            <tr><td>교육비</td><td>운영·안전 교육</td><td class="num ph">000만원</td></tr>
+            <tr><td>차량</td><td>4륜 전기자전거 10대</td><td class="num ph">0,000만원</td></tr>
+            <tr><td>예비 배터리·충전 설비</td><td>교체용 배터리, 충전기, 대여 부스</td><td class="num ph">000만원</td></tr>
+            <tr><td>보증금</td><td>계약 종료 시 반환</td><td class="num ph">000만원</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="2">합계</td><td class="num ph">0,000만원</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap sec">
+    <div class="sec-head">
+      <div class="kicker">FAQ</div>
+      <h2>자주 묻는 질문</h2>
+      <p>더 궁금한 점은 상담 신청 때 남겨 주세요.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>자전거를 못 타는 손님도 탈 수 있나요?</summary><p>네. 네 바퀴로 서 있어 균형을 잡을 필요가 없고, 정차할 때 발을 디디지 않아도 됩니다. 권장 키는 150~180cm입니다.</p></details>
+      <details><summary>배터리는 얼마나 가고, 충전은 어떻게 하나요?</summary><p>1회 충전으로 약 70km를 달리며 완충까지 6~8시간 걸립니다. 배터리를 분리해 따로 충전할 수 있어 예비 배터리를 두면 대여를 멈추지 않고 운영할 수 있습니다.</p></details>
+      <details><summary>운영 경험이 없어도 시작할 수 있나요?</summary><p>네. 대여·반납·배터리 교체 위주의 단순한 운영이고, 오픈 전 교육과 초기 현장 지원이 포함됩니다.</p></details>
+      <details><summary>운영 장소는 직접 구해야 하나요?</summary><p>희망 지역을 알려 주시면 본사가 후보 입지를 함께 검토합니다. 공원이나 관광지는 지자체 점용 허가가 필요할 수 있어 인허가 여부도 함께 확인합니다. <span class="ph">본사 입지 확보 지원 범위</span></p></details>
+      <details><summary>고장 나면 어떻게 하나요?</summary><p><span class="ph">A/S 접수 방법, 처리 기간, 보증 기간 (사용설명서 13장 기준으로 작성 예정)</span></p></details>
+      <details><summary>운전면허가 필요한가요?</summary><p>PAS 방식의 전기자전거, 속도 제한 24km/h, 무게 30kg의 법적 규제를 모두 준수하였기에 운전 면허가 불필요하며, 번호판도 불필요합니다.</p></details>
+      <details><summary>계약 기간과 로열티는 어떻게 되나요?</summary><p><span class="ph">계약 기간 0년, 로열티 월 매출의 0% 또는 대당 월 00,000원</span></p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="brand">
   <div class="wrap sec">
     <div class="sec-head">
       <div class="kicker">About MOBELIX</div>
@@ -405,169 +569,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <dl><dt>제품명</dt><dd>4륜 전기자전거</dd><dt>모델명</dt><dd>Prime4 (파생모델 Joy)</dd><dt>등록일</dt><dd>2026.10.27</dd><dt>발급기관</dt><dd>국립전파연구원</dd></dl>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="band alt" id="product">
-  <div class="wrap sec">
-    <div class="sec-head">
-      <div class="kicker">Product</div>
-      <h2>전복되지 않는<br>4륜 전기자전거</h2>
-      <p>2륜과 3륜 자전거로는 구현할 수 없는 구조입니다. 회전할 때 안쪽 바퀴가 바깥쪽보다 느리게 돌도록 후륜에 차동기어를 넣어, 렌탈 고객이 처음 타도 안정적으로 방향을 바꿉니다.</p>
-    </div>
-    <div>
-      <div class="viewer">
-        <div class="viewer-main"><img id="v-img" src="img/white-front.webp" alt="화이트 모델 전면 사선" width="1400" height="1303"></div>
-        <div class="viewer-bar">
-          <div class="thumbs" id="v-thumbs" role="group" aria-label="보는 각도"></div>
-          <div class="colors" role="group" aria-label="색상">
-            <button type="button" id="c-white" aria-pressed="true"><i style="background:#F2F2F0"></i>화이트</button>
-            <button type="button" id="c-navy" aria-pressed="false"><i style="background:#1E2741"></i>네이비</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="feat">
-        <article><span class="n">01</span><div><h3>회전 차동기어</h3><p>후륜 차동기어가 좌우 바퀴 회전차를 보정해 커브에서도 기울지 않습니다.</p></div></article>
-        <article><span class="n">02</span><div><h3>10cm 스윙암 서스펜션</h3><p>약 10cm 스윙암 플로팅 구조와 듀얼 서스펜션으로 잔디밭, 비포장도로의 요철을 흡수합니다.</p></div></article>
-        <article><span class="n">03</span><div><h3>PAS 전기모터 보조</h3><p>페달을 밟으면 모터가 힘을 보태 작은 힘으로도 15° 경사를 오릅니다.</p></div></article>
-        <article><span class="n">04</span><div><h3>교체형 배터리</h3><p>안장 아래 레버를 젖혀 배터리를 바로 바꿉니다. 충전된 예비 배터리로 대여를 쉬지 않고 돌릴 수 있습니다.</p></div></article>
-        <article><span class="n">05</span><div><h3>후진 기어와 방향지시등</h3><p>정지 후 후진이 가능하고, 전후면 방향지시등과 전조등, 후미등을 갖췄습니다.</p></div></article>
-        <article><span class="n">06</span><div><h3>대형 바구니, 안전 주차</h3><p>뒤쪽 바구니에 짐이나 소형 반려견을 태우고, 받침대 없이도 그대로 세워 둡니다.</p></div></article>
-      </div>
-
-      <div class="details">
-        <figure><img src="img/d-display.webp" alt="LCD 계기판" loading="lazy" width="1200" height="800"><figcaption><b>LCD 계기판</b><span>속도, 단수, 배터리 잔량 표시</span></figcaption></figure>
-        <figure><img src="img/d-suspension.webp" alt="전조등과 듀얼 서스펜션" loading="lazy" width="1200" height="800"><figcaption><b>전조등과 듀얼 서스펜션</b><span>야간 주행과 노면 충격 흡수</span></figcaption></figure>
-        <figure><img src="img/d-axle.webp" alt="전륜 구조와 디스크 브레이크" loading="lazy" width="1200" height="800"><figcaption><b>전·후 디스크 브레이크</b><span>네 바퀴 모두 안정적으로 제동</span></figcaption></figure>
-        <figure><img src="img/d-battery.webp" alt="48V 20Ah 배터리" loading="lazy" width="1200" height="800"><figcaption><b>48V 20Ah 배터리</b><span>삼성SDI 셀, 잠금 키로 분리</span></figcaption></figure>
-        <figure><img src="img/d-saddle.webp" alt="인체공학 안장" loading="lazy" width="1200" height="800"><figcaption><b>와이드 안장</b><span>각도 조절, 장거리에도 편안한 착석감</span></figcaption></figure>
-        <figure><img src="img/d-mirror.webp" alt="후시경과 그립" loading="lazy" width="1200" height="800"><figcaption><b>후시경과 그립</b><span>후방 시야 확보, 인체공학 핸들바</span></figcaption></figure>
-      </div>
-
-      <div class="spec-wrap">
-        <table class="spec">
-          <caption>제원 및 사양</caption>
-          <tbody>
-            <tr><th>주행방식</th><td>PAS 페달 보조</td><th>모터</th><td>48V 350W 후륜 차동 모터</td></tr>
-            <tr><th>주행거리</th><td>70km (파워 어시스트, 1인 기준)</td><th>배터리</th><td>48V 20Ah 리튬 (삼성SDI 셀)</td></tr>
-            <tr><th>최고속도</th><td>24km/h</td><th>충전</th><td>전용 충전기 54.6V 2A, 6~8시간</td></tr>
-            <tr><th>등판능력</th><td>15°</td><th>브레이크</th><td>전·후 디스크 브레이크</td></tr>
-            <tr><th>타이어</th><td>20″ × 2.125, 알루미늄 휠</td><th>프레임</th><td>알루미늄 합금</td></tr>
-            <tr><th>크기</th><td>폭 694mm × 길이 1,726mm</td><th>무게</th><td>30.0kg (배터리 포함)</td></tr>
-            <tr><th>정격 적재량</th><td>175kg</td><th>권장 키</th><td>150~180cm</td></tr>
-            <tr><th>기타</th><td colspan="3">LCD 디스플레이, 후진 기어, 방향지시등, 전조등·후미등, 바구니, 벨</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="src">출처: MOBELIX 회사 소개서(2026.09), 정격 적재량은 사용설명서 기준. 사양은 제품 개선에 따라 바뀔 수 있습니다.</p>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="why">
-  <div class="wrap sec">
-    <div class="sec-head">
-      <div class="kicker">Why MOBELIX</div>
-      <h2>렌탈 사업에<br>맞는 이유</h2>
-      <p>렌탈은 처음 타는 손님이 대부분입니다. 넘어지지 않고, 충전이 빠르고, 관리가 쉬운 차량이어야 회전율이 나옵니다.</p>
-    </div>
-    <div class="why">
-      <article><div class="k">CUSTOMER</div><h3>누구나 탈 수 있는 차량</h3><p>자전거를 못 타는 사람, 어린이, 어르신도 탈 수 있어 가족 단위 손님을 놓치지 않습니다.</p></article>
-      <article><div class="k">LOCATION</div><h3>사람이 머무는 곳이 상권</h3><p>유원지, 관광지, 산책로, 리조트와 캠핑장 등 시설 내 이동수단으로 운영합니다.</p></article>
-      <article><div class="k">OPERATION</div><h3>배터리만 바꾸면 다시 출발</h3><p>교체형 배터리로 충전 대기 없이 다음 손님을 받습니다. 1회 완충 전기료는 100~200원 수준입니다.</p></article>
-      <article><div class="k">DURABILITY</div><h3>관리가 쉬운 구조</h3><p>부식에 강한 알루미늄 프레임과 디스크 브레이크로 야외 운영에 맞췄습니다. <span class="ph">정기 점검과 A/S 지원 방식</span></p></article>
-      <article><div class="k">SUPPORT</div><h3>보조금과 친환경 정책</h3><p>지자체 친환경 정책과 연계된 보조금으로 초기 부담을 줄일 수 있습니다. <span class="ph">적용 가능 지역과 지원 범위 확인 필요</span></p></article>
-      <article><div class="k">MARKETING</div><h3>본사 공동 홍보</h3><p><span class="ph">SNS, 지역 축제 협업, 온라인 예약 채널 입점 등 본사 지원 내용</span></p></article>
-    </div>
-  </div>
-</section>
-
-<section class="band alt" id="revenue">
-  <div class="wrap sec">
-    <div class="sec-head">
-      <div class="kicker">Revenue</div>
-      <h2>수익 구조</h2>
-      <p>시간 단위 대여료가 기본 매출입니다. 주말과 성수기에 회전율이 올라가므로 운영 대수와 입지가 수익을 좌우합니다.</p>
-      <ul class="rev-list">
-        <li><b>대여료</b><span>30분, 1시간 단위 요금 <span class="ph">본사 권장가</span></span></li>
-        <li><b>단체·패키지</b><span>학교, 기업 워크숍, 리조트 객실 연계 상품</span></li>
-        <li><b>부가 매출</b><span><span class="ph">사진 촬영, 음료, 굿즈 등</span></span></li>
-      </ul>
-    </div>
-    <div class="calc" aria-label="예상 월 수익 계산기">
-      <div class="calc-grid">
-        <div class="calc-in">
-          <div class="field"><label for="c-units">운영 대수<output id="o-units"></output></label><input id="c-units" type="range" min="3" max="40" value="10"></div>
-          <div class="field"><label for="c-turns">1대당 하루 대여 횟수<output id="o-turns"></output></label><input id="c-turns" type="range" min="1" max="12" value="4"></div>
-          <div class="field"><label for="c-price">1회 대여료 (1시간)<output id="o-price"></output></label><input id="c-price" type="range" min="10000" max="50000" step="1000" value="20000"></div>
-          <div class="field"><label for="c-days">월 운영일<output id="o-days"></output></label><input id="c-days" type="range" min="8" max="30" value="22"></div>
-          <div class="field"><label for="c-cost">월 고정비 (임대료·인건비 등)<output id="o-cost"></output></label><input id="c-cost" type="range" min="0" max="1500" step="10" value="300"></div>
-        </div>
-        <div class="calc-out" aria-live="polite">
-          <div class="row"><span>월 대여 횟수</span><span id="r-rides"></span></div>
-          <div class="row"><span>월 예상 매출</span><span id="r-gross"></span></div>
-          <div class="row"><span>충전 전기료 (1회 200원 가정)</span><span id="r-power"></span></div>
-          <div class="row"><span>로열티 <span class="ph" id="r-roy-rate"></span></span><span id="r-roy"></span></div>
-          <div class="row"><span>월 고정비</span><span id="r-cost"></span></div>
-          <div class="total"><small>월 예상 영업이익 (세전)</small><b id="r-net"></b></div>
-        </div>
-      </div>
-      <p class="calc-note">대여료, 회전율, 고정비는 모두 예시 값이며 실제 수익을 보장하지 않습니다. <span class="ph">본사 운영 데이터와 로열티 조건으로 기본값 교체 필요</span></p>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="process">
-  <div class="wrap sec">
-    <div class="sec-head">
-      <div class="kicker">Process</div>
-      <h2>창업 절차</h2>
-      <p>상담부터 오픈까지 본사 담당자가 함께합니다.</p>
-    </div>
-    <div>
-      <ol class="steps">
-        <li><h3>가맹 상담 신청</h3><p>아래 양식이나 전화로 신청하면 담당자가 연락드립니다.</p><span class="dur ph">1~2일</span></li>
-        <li><h3>상권·입지 분석</h3><p>희망 지역의 유동 인구, 주행 동선, 주차와 충전 공간, 인허가 여부를 확인합니다.</p><span class="dur ph">1~2주</span></li>
-        <li><h3>사업 설명 및 계약</h3><p>예상 수익, 비용, 계약 조건을 설명하고 가맹 계약을 맺습니다.</p><span class="dur ph">1주</span></li>
-        <li><h3>차량 배정·거점 구축</h3><p>운영 대수에 맞춰 차량과 예비 배터리를 배정하고 대여소와 충전 설비를 갖춥니다.</p><span class="dur ph">2~4주</span></li>
-        <li><h3>운영 교육</h3><p>대여·반납 절차, 탑승 안전 교육, 배터리 교체와 기본 정비를 교육합니다.</p><span class="dur ph">2~3일</span></li>
-        <li><h3>오픈 및 사후 관리</h3><p>오픈 초기 현장 지원 후 정기 점검과 A/S를 이어갑니다.</p><span class="dur ph">상시</span></li>
-      </ol>
-      <div class="cost">
-        <table>
-          <caption>예상 창업 비용 <span class="ph" style="font-weight:400">10대 기준 예시</span></caption>
-          <thead><tr><th>항목</th><th>내용</th><th>금액 (VAT 별도)</th></tr></thead>
-          <tbody>
-            <tr><td>가맹비</td><td>브랜드 사용, 상권 분석</td><td class="num ph">000만원</td></tr>
-            <tr><td>교육비</td><td>운영·안전 교육</td><td class="num ph">000만원</td></tr>
-            <tr><td>차량</td><td>4륜 전기자전거 10대</td><td class="num ph">0,000만원</td></tr>
-            <tr><td>예비 배터리·충전 설비</td><td>교체용 배터리, 충전기, 대여 부스</td><td class="num ph">000만원</td></tr>
-            <tr><td>보증금</td><td>계약 종료 시 반환</td><td class="num ph">000만원</td></tr>
-          </tbody>
-          <tfoot><tr><td colspan="2">합계</td><td class="num ph">0,000만원</td></tr></tfoot>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band alt" id="faq">
-  <div class="wrap sec">
-    <div class="sec-head">
-      <div class="kicker">FAQ</div>
-      <h2>자주 묻는 질문</h2>
-      <p>더 궁금한 점은 상담 신청 때 남겨 주세요.</p>
-    </div>
-    <div class="faq">
-      <details open><summary>자전거를 못 타는 손님도 탈 수 있나요?</summary><p>네. 네 바퀴로 서 있어 균형을 잡을 필요가 없고, 정차할 때 발을 디디지 않아도 됩니다. 권장 키는 150~180cm입니다.</p></details>
-      <details><summary>배터리는 얼마나 가고, 충전은 어떻게 하나요?</summary><p>1회 충전으로 약 70km를 달리며 완충까지 6~8시간 걸립니다. 배터리를 분리해 따로 충전할 수 있어 예비 배터리를 두면 대여를 멈추지 않고 운영할 수 있습니다.</p></details>
-      <details><summary>운영 경험이 없어도 시작할 수 있나요?</summary><p>네. 대여·반납·배터리 교체 위주의 단순한 운영이고, 오픈 전 교육과 초기 현장 지원이 포함됩니다.</p></details>
-      <details><summary>운영 장소는 직접 구해야 하나요?</summary><p>희망 지역을 알려 주시면 본사가 후보 입지를 함께 검토합니다. 공원이나 관광지는 지자체 점용 허가가 필요할 수 있어 인허가 여부도 함께 확인합니다. <span class="ph">본사 입지 확보 지원 범위</span></p></details>
-      <details><summary>고장 나면 어떻게 하나요?</summary><p><span class="ph">A/S 접수 방법, 처리 기간, 보증 기간 (사용설명서 13장 기준으로 작성 예정)</span></p></details>
-      <details><summary>운전면허가 필요한가요?</summary><p>PAS 방식의 전기자전거, 속도 제한 24km/h, 무게 30kg의 법적 규제를 모두 준수하였기에 운전 면허가 불필요하며, 번호판도 불필요합니다.</p></details>
-      <details><summary>계약 기간과 로열티는 어떻게 되나요?</summary><p><span class="ph">계약 기간 0년, 로열티 월 매출의 0% 또는 대당 월 00,000원</span></p></details>
     </div>
   </div>
 </section>
