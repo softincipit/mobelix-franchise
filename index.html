@@ -447,7 +447,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <div class="row"><span>월 대여 횟수</span><span id="r-rides"></span></div>
           <div class="row"><span>월 예상 매출</span><span id="r-gross"></span></div>
           <div class="row"><span>충전 전기료 (1회 200원 가정)</span><span id="r-power"></span></div>
-          <div class="row"><span>로열티 <span class="ph" id="r-roy-rate"></span></span><span id="r-roy"></span></div>
           <div class="row"><span>월 고정비</span><span id="r-cost"></span></div>
           <div class="total"><small>월 예상 영업이익 (세전)</small><b id="r-net"></b></div>
         </div>
@@ -674,8 +673,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     $('r-rides').textContent=rides.toLocaleString('ko-KR')+'회';
     $('r-gross').textContent=won(gross);
     $('r-power').textContent=won(power);
-    $('r-roy-rate').textContent='매출의 '+ROYALTY+'%';
-    $('r-roy').textContent=won(roy);
     $('r-cost').textContent=won(c);
     $('r-net').textContent=won(gross-power-roy-c);
   }
