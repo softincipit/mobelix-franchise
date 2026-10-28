@@ -249,6 +249,11 @@ table{width:100%;border-collapse:collapse;font-size:14.5px}
 .cost td.num{font-family:var(--f-mono);white-space:nowrap}
 .cost tfoot td{font-weight:700;border-bottom:2px solid var(--green)}
 .cost caption{text-align:left;font-weight:700;padding-bottom:8px}
+.cost table+table{margin-top:40px}
+.cost .cap-tag{color:var(--gold);font-weight:500;margin-left:6px}
+.cost th,.cost td{text-align:center}
+.cost tfoot td{background:var(--gold-soft)}
+@media (max-width:560px){.cost table{min-width:0;font-size:13px}.cost th,.cost td{padding:10px 4px}}
 
 /* FAQ */
 .faq details{border-bottom:1px solid var(--line)}
@@ -474,16 +479,28 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </ol>
       <div class="cost">
         <table>
-          <caption>예상 창업 비용 <span class="ph" style="font-weight:400">10대 기준 예시</span></caption>
+          <caption>예상 창업 비용 <span class="cap-tag">5대 기준 예시</span></caption>
           <thead><tr><th>항목</th><th>내용</th><th>금액 (VAT 별도)</th></tr></thead>
           <tbody>
-            <tr><td>가맹비</td><td>브랜드 사용, 상권 분석</td><td class="num ph">000만원</td></tr>
-            <tr><td>교육비</td><td>운영·안전 교육</td><td class="num ph">000만원</td></tr>
-            <tr><td>차량</td><td>4륜 전기자전거 10대</td><td class="num ph">0,000만원</td></tr>
-            <tr><td>예비 배터리·충전 설비</td><td>교체용 배터리, 충전기, 대여 부스</td><td class="num ph">000만원</td></tr>
-            <tr><td>보증금</td><td>계약 종료 시 반환</td><td class="num ph">000만원</td></tr>
+            <tr><td>가맹비</td><td>브랜드 사용, 상권 분석</td><td class="num">350만원</td></tr>
+            <tr><td>교육비</td><td>운영·안전 교육</td><td class="num">무료</td></tr>
+            <tr><td>4륜전기자전거</td><td>4륜 전기자전거 5대</td><td class="num">1,750만원</td></tr>
+            <tr><td>예비 배터리·충전 설비</td><td>교체용 배터리(2개), 충전기(2개)</td><td class="num">100만원</td></tr>
+            <tr><td>보증금</td><td>계약 종료 시 반환</td><td class="num">1,000만원</td></tr>
           </tbody>
-          <tfoot><tr><td colspan="2">합계</td><td class="num ph">0,000만원</td></tr></tfoot>
+          <tfoot><tr><td colspan="2">합계</td><td class="num">3,200만원</td></tr></tfoot>
+        </table>
+        <table>
+          <caption>예상 창업 비용 <span class="cap-tag">10대 기준 예시</span></caption>
+          <thead><tr><th>항목</th><th>내용</th><th>금액 (VAT 별도)</th></tr></thead>
+          <tbody>
+            <tr><td>가맹비</td><td>브랜드 사용, 상권 분석</td><td class="num">350만원</td></tr>
+            <tr><td>교육비</td><td>운영·안전 교육</td><td class="num">무료</td></tr>
+            <tr><td>4륜전기자전거</td><td>4륜 전기자전거 10대</td><td class="num">3,500만원</td></tr>
+            <tr><td>예비 배터리·충전 설비</td><td>교체용 배터리(3개), 충전기(3개)</td><td class="num">150만원</td></tr>
+            <tr><td>보증금</td><td>계약 종료 시 반환</td><td class="num">1,000만원</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="2">합계</td><td class="num">5,000만원</td></tr></tfoot>
         </table>
       </div>
     </div>
